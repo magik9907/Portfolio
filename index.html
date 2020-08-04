@@ -11,10 +11,57 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/index.min.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
 </header>
 
-<body>
-  
+<body class="landingpage">
+    <header class="prezentation">
+        <div class="title">
+            <h1>Łukasz Milewski</h1>
+            <p>developer z pasji</p>
+        </div>
+        <div class="wrapper">
+            <ul class="specialization">
+                <li>
+                    <h3>
+                        Front-end Developer
+                    </h3>
+                </li>
+                <li>
+                    <h3>
+                        ReactJS Developer
+                    </h3>
+                </li>
+                <li>
+                    <h3>
+                        JavaScript Developer
+                    </h3>
+                </li>
+            </ul>
+            <div class="social">
+                <a href="https://www.linkedin.com/in/luki-m/" title="linkedin" target="_blank"
+                    rel="noreferrer noopener"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/magik9907" title="github" target="_blank" rel="noreferrer noopener"><i
+                        class="fab fa-github-square"></i></a>
+            </div>
+        </div>
+    </header>
+
+
+    <p class="build-page-message"
+        style="width:200px;height:auto;background-color: gray;color:white;padding : 20px;border-radius: 20px;position: fixed; right:20px;bottom:20px;display: none;"
+        onClick="this.style.display = 'none'">
+        <span style="position: absolute; top:10px; right:10px; color:red;">X</span>
+        Strona internetowa jest w budowie<br />
+        Web page nder Contruction
+    </p >
+    <script>
+        window.onload = () => {
+            const messageElement = document.querySelector(".build-page-message");
+            messageElement.style.display = "block";
+        }
+    </script>
 </body>
 
 </html>

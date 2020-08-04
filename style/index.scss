@@ -4,7 +4,7 @@
 @import './base/mixin';
 @import './page/footer';
 @import './page/header';
-
+@import './page/landing-page';
 
 
 *,
@@ -14,15 +14,16 @@
 }
 
 a {
+    display: inline-block;
     text-decoration: none;
 }
 
-iframe{
+iframe {
     width: 100%;
     height: auto;
 }
 
-address{
+address {
     font-style: normal;
 }
 
@@ -32,4 +33,3 @@ html {
     padding: 0;
     margin: 0;
 }
-
