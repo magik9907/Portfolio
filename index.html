@@ -11,10 +11,102 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/index.min.css">
 
+
+
+    <!-- delete when creating will end -->
+    <meta name="robots" content="noindex nofollow" />
 </header>
 
 <body>
-  
+    <body>
+        <header>
+            <h1>Łukasz Milewski - developer z pasji</h1>
+    
+            <nav>
+                <ul>
+                    <li><a href="/index.html#prezentation" title="Strona główna">Strona główna</a></li>
+                    <li><a href="/index.html#about" title="O mnie">O mnie</a></li>
+                    <li><a href="/index.html#projects" title="Projekty">Projekty</a></li>
+                    <li><a href="/index.html#contact" title="Kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="prezentation">
+                <p>Łukasz Milewski - developer z pasji</p>
+                <ul>
+                    <li>
+                        <h3>
+                            Front-end Developer
+                        </h3>
+                    </li>
+                    <li>
+                        <h3>
+                            ReactJS Developer
+                        </h3>
+                    </li>
+                    <li>
+                        <h3>
+                            JavaScript Developer
+                        </h3>
+                    </li>
+                </ul>
+                <a href="https://www.linkedin.com/in/luki-m/" title="linkedin" target="_blank" rel="noreferrer noopener"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/magik9907" title="github" target="_blank" rel="noreferrer noopener"><i
+                        class="fab fa-github-square"></i></a>
+            </section>
+    
+            <section id="about">
+                <p>Cześć!</p>
+                <p>Człowiek lubiący wyzwania i nie bojący sie pracy. Interesuje się JavaScriptem i piłką nożną. </p>
+                <div>
+                    <p>W czym tworzę:</p>
+                    <div>
+                        <span>js</span><span>reactjs</span><span>scss</span><span>html</span>
+                    </div>
+                </div>
+            </section>
+    
+            <section id="projects"></section>
+    
+            <section id="contact">
+                
+                <div>
+                    <form action="mailto:lukaszmilewski99@gmail.com" method="post" id="contact-form">
+                        <label for="contact-email"></label><input type="email" id="contact-email" name="contact[email]" required>
+                        <label for="contact-title"></label><input type="text" id="contact-title" name="contact[title]">
+                        <textarea name="contact[text]" id="contact-text" cols="30" rows="10" required></textarea>
+                    </form>
+                </div>
+
+                <a href="https://www.linkedin.com/in/luki-m/" title="linkedin" target="_blank" rel="noreferrer noopener"><i
+                    class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/magik9907" title="github" target="_blank" rel="noreferrer noopener"><i
+                    class="fab fa-github-square"></i></a>
+            </section>
+    
+    
+        </main>
+        <footer>
+    
+        </footer>
+    
+    
+        <p class="build-page-message"
+            style="width:200px;height:auto;background-color: gray;color:white;padding : 20px;border-radius: 20px;position: fixed; right:20px;bottom:20px;display: none;"
+            onClick="this.style.display = 'none'">
+            <span style="position: absolute; top:10px; right:10px; color:red;">X</span>
+            Strona internetowa jest w budowie<br />
+            Under Contruction
+        </p class=>
+        <script>
+            window.onload = () => {
+                const messageElement = document.querySelector(".build-page-message");
+                messageElement.style.display = "block";
+            }
+        </script>
+    </body>
 </body>
 
 </html>
