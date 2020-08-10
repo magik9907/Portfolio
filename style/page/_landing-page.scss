@@ -212,6 +212,10 @@ section {
 
     .recaptcha {
         justify-content: center;
+
+        iframe{
+            height: 78px;
+        }
     }
 
     &::after {
