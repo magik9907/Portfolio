@@ -32,19 +32,20 @@
             <div class="menu-burger">
                 <span class="burger"></span>
             </div>
-
-            <div class="title">
-                <h1>Łukasz Milewski</h1>
-                <p>developer z pasji</p>
+            <div class="wrapper">
+                <div class="title">
+                    <h1>Łukasz Milewski</h1>
+                    <p>developer z pasji</p>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html#prezentation" title="Strona główna">Strona główna</a></li>
+                        <li><a href="index.html#about" title="O mnie">O mnie</a></li>
+                        <li><a href="index.html#projects" title="Projekty">Projekty</a></li>
+                        <li><a href="index.html#contact" title="Kontakt">Kontakt</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html#prezentation" title="Strona główna">Strona główna</a></li>
-                    <li><a href="index.html#about" title="O mnie">O mnie</a></li>
-                    <li><a href="index.html#projects" title="Projekty">Projekty</a></li>
-                    <li><a href="index.html#contact" title="Kontakt">Kontakt</a></li>
-                </ul>
-            </nav>
         </header>
         <main>
             <section id="prezentation" class="prezentation">
@@ -81,7 +82,7 @@
             </section>
 
             <section class="about" id="about">
-                <p class="question">Kim jestem?</p>
+                <h3 class="question">Kim jestem?</h3>
                 <p>Człowiekiem lubiącym wyzwania i nie bojącym się pracy. Interesuje się JavaScriptem i piłką nożną.
                     Chętnym dalszego rozwoju i poszerzania więdzy nie tylko w zakresie JS ale również jego framework-ów
                     i NodeJS-a, oraz innych języków programowania.</p>
@@ -104,23 +105,28 @@
             </section>
 
             <section class="contact" id="contact">
-
+                <h3>Kontakt</h3>
                 <div>
                     <form method="POST" action="POST" id="contact-form" name="contact" data-netlify="true"
                         data-netlify-recaptcha="true">
-                        <div class="input-row">
-                            <label for="contact-email">E-mail:</label><input type="email" id="contact-email"
-                                name="email" required>
-                        </div>
-                        <div class="input-row">
-                            <label for="contact-title">Tytuł:</label><input type="text" id="contact-title" name="title">
+                        <div class="wrap">
+                            <div class="input-row">
+                                <label for="contact-email">E-mail:</label><input type="email" id="contact-email"
+                                    name="email" required>
+                            </div>
+                            <div class="input-row">
+                                <label for="contact-title">Tytuł:</label><input type="text" id="contact-title"
+                                    name="title">
+                            </div>
                         </div>
                         <div class="input-row">
                             <textarea name="text" id="contact-text" cols="30" rows="10" required
                                 placeholder="Wiadomość"></textarea>
                         </div>
-                        <div data-netlify-recaptcha="true" class="recaptcha input-row"></div>
-                        <div class="input-row"><button type="submit">Wyślij</button></div>
+                        <div class="wrap">
+                            <div data-netlify-recaptcha="true" class="recaptcha input-row"></div>
+                            <div class="input-row"><button type="submit">Wyślij</button></div>
+                        </div>
                     </form>
                 </div>
                 <div class="social">
@@ -154,7 +160,7 @@
 
             window.onload = () => {
                 const messageElement = document.querySelector(".build-page-message");
-                //   messageElement.style.display = "block";
+                messageElement.style.display = "block";
             }
         </script>
     </body>
