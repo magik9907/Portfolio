@@ -210,6 +210,10 @@ section {
         margin-top: 15px;
     }
 
+    .recaptcha {
+        justify-content: center;
+    }
+
     &::after {
         content: '';
         display: block;
@@ -340,5 +344,6 @@ section {
             align-items: center;
             flex-direction: row;
         }
+
     }
 }
