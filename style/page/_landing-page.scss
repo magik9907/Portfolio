@@ -1,0 +1,344 @@
+section {
+    padding: 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.prezentation {
+    height: 100vw;
+
+    svg {
+        font-size: 1.6em;
+    }
+
+    .dev-cont,
+    svg {
+        color: $font-bgc-main;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+        border: 50vw solid $bgc-main;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .title {
+        width: 50vw;
+        position: absolute;
+        top: 25vw;
+        transform: translateY(-25%);
+        font-size: 1.5em;
+        color: $font-bgc-main;
+
+        .fullName {
+            @extend %font-title;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 5px;
+        }
+
+        p {
+            @extend %font-paragraph;
+            text-transform: uppercase;
+            margin-top: 10px;
+            text-align: center;
+            margin-bottom: 0;
+        }
+    }
+
+    .dev-cont {
+        @extend %font-paragraph;
+        width: auto;
+        position: absolute;
+        top: 50vw;
+        left: 50vw;
+        margin-right: 10px;
+        transform: translate(0vw, -5vw);
+
+        ul {
+            padding: 0;
+            list-style: none;
+            margin-top: 0;
+            text-align: center;
+
+            li {
+                margin-bottom: 10px;
+            }
+
+            h3 {
+                line-height: 1em;
+                margin: 0 0 5px;
+                font-weight: normal;
+            }
+        }
+    }
+
+    .fast-contact {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+.about {
+    background-color: $bgc-main;
+    color: $font-bgc-main;
+    z-index: 0;
+
+    .question {
+        color: $add-color;
+        font-weight: bold;
+        font-size: 1.3em;
+        @extend %font-title;
+    }
+
+    p {
+        @extend %font-paragraph;
+        text-align: justify;
+    }
+
+    .technology {
+        padding-top: 1px;
+        margin: 10px -10px;
+        background-color: $font-bgc-main;
+        color: $font-bgc-add;
+
+        p {
+            font-size: 1.2em;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        div {
+            overflow-x: auto;
+            min-width: 100vw;
+            text-align: center;
+            white-space: nowrap;
+            padding: 10px;
+
+            span {
+                min-width: 40px;
+                margin: 0 20px;
+
+                svg {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+}
+
+.projects {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $font-bgc-main;
+    color: $font-bgc-add;
+
+    p {
+        font-size: 1.5em;
+    }
+
+    a {
+        @extend %font-paragraph;
+        color: $font-bgc-add;
+    }
+
+    svg {
+        height: 50px !important;
+        width: 50px !important;
+    }
+}
+
+.contact {
+    color: $font-bgc-main;
+    padding: 10px;
+
+    label {
+        color: $add-color;
+        @extend %font-title;
+        font-size: 1.2em;
+    }
+
+    a,
+    svg {
+        font-size: 1.3em;
+        color: $font-bgc-main;
+    }
+
+    svg {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    textarea,
+    button,
+    input {
+        width: 100%;
+        background-color: $add-color4;
+        color: $font-bgc-main;
+        @extend %font-paragraph;
+        border-color: $add-color5;
+        padding: 10px 15px;
+    }
+
+    textarea {
+        resize: vertical;
+        line-height: 1.5em;
+    }
+
+    button {
+        text-transform: uppercase;
+        font-size: 1.3em;
+        cursor: pointer;
+    }
+
+
+    .input-row {
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+        border: 50vw solid $bgc-main;
+        border-left-color: transparent;
+        border-top-color: transparent;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .social {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background-color: $add-color4;
+        margin-top: 20px;
+        border-radius: 15px;
+        padding: 10px;
+    }
+
+    .social-link {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+
+@media screen and(max-width:300px) {
+    .prezentation {
+        height: auto;
+
+        &::after {
+            display: none;
+        }
+
+        .title,
+        .dev-cont {
+            transform: none;
+            position: unset;
+        }
+
+        .dev-cont {
+            margin-top: 20px;
+        }
+    }
+}
+
+@media screen and(min-width:390px) {
+    .prezentation {
+
+        .dev-cont {
+            transform: translate(0vw, 10vw);
+        }
+    }
+}
+
+@media screen and(min-width:600px) {
+    .prezentation {
+        svg {
+            font-size: 3em;
+        }
+
+        .dev-cont {
+            ul {
+                li {
+                    margin-bottom: 20px;
+                    font-size: 1.5em;
+                }
+            }
+        }
+
+        .title {
+            .fullName {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1.7em;
+            }
+        }
+    }
+
+    .about {
+        .question {
+            font-size: 1.8em;
+        }
+
+        p {
+            font-size: 1.4em;
+        }
+
+        .technology {
+            p {
+                font-size: 1.5em;
+            }
+
+            div {
+                span {
+                    svg {
+                        width: 75px;
+                        height: 75px;
+                    }
+                }
+            }
+        }
+    }
+
+    .contact {
+        label {
+            font-size: 1.4em;
+            white-space: nowrap;
+            margin-right: 15px;
+        }
+
+        input,
+        textarea,
+        button {
+            font-size: 1.4em;
+            line-height: 1.6em;
+        }
+
+        .input-row {
+            align-items: center;
+            flex-direction: row;
+        }
+    }
+}

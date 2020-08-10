@@ -1,0 +1,12 @@
+@mixin burger($bgc, $top, $left, $height, $width, $deg) {
+    background-color: $bgc;
+    display: block;
+    width: $height;
+    height: $width;
+    position: absolute;
+    top: $top;
+    left: $left;
+    transition: top 1s,transform 1s;
+    transform: rotateZ($deg);
+
+}
