@@ -1,0 +1,168 @@
+header {
+    width: 75%;
+    height: 100vh;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    border-left: 3px solid $add-color4;
+    background-color: $bgc-main;
+    color: $font-bgc-main;
+    transition: right 1s;
+
+
+    a {
+        display: inline-block;
+        color: $font-bgc-main;
+        width: 100%;
+        height: 100%;
+        word-wrap: break-word;
+    }
+
+    h1 {
+        @extend %font-title;
+        color: $add-color4;
+        font-size: 1.5em;
+        text-align: center;
+        margin: 10px 0 0;
+    }
+
+    p {
+        @extend %font-title;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 10px 0 0;
+        font-size: 1.2em;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            @extend %font-paragraph;
+            max-width: 100%;
+            width: 200px;
+            margin: 20px auto 0px auto;
+            text-align: center;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+
+    nav {
+        margin-top: 40px;
+
+        li {
+            position: relative;
+            font-size: 1.1em;
+            padding: 5px 15px;
+            text-transform: uppercase;
+            border-radius: 20px;
+
+            &:hover {
+                border: 3px solid $add-color4;
+            }
+
+            &:active {
+                border-style: outset;
+                border: 3px solid $font-bgc-main;
+            }
+        }
+    }
+
+    &.closed {
+        right: -75%;
+
+        .menu-burger {
+
+            .burger {
+                top: 15px;
+                transform: rotateZ(0deg);
+
+                &::after {
+                    transform: rotateZ(0deg);
+                    top: 15px;
+                }
+
+            }
+        }
+    }
+
+    .menu-burger {
+        box-sizing: content-box;
+        width: 50px;
+        height: 50px;
+        border: 3px solid $add-color4;
+        position: absolute;
+        left: -59px;
+        top: 20px;
+        background-color: $bgc-add;
+
+        .burger {
+            @include burger($font-bgc-add, 23px, 5px, 40px, 5px, -45deg);
+
+            &::after {
+                content: '';
+                @include burger($font-bgc-add, 0px, 0px, 100%, 100%, 90deg);
+            }
+        }
+    }
+
+}
+
+@media screen and(max-width:300px) {
+    header {
+
+        &.closed {
+            .menu-burger {
+
+                .burger {
+                    top: 10px;
+
+                    &::after {
+                        top: 8px;
+                    }
+                }
+            }
+        }
+
+        .menu-burger {
+            width: 30px;
+            height: 30px;
+            border-width: 2px;
+            left: -37px;
+
+            .burger {
+                width: 20px;
+                height: 3px;
+                top: 14px;
+            }
+        }
+    }
+}
+
+@media screen and(min-width:600px) {
+    header{
+        width: 400px;
+        &.closed{
+        right: -400px;
+        }
+        h1{
+            font-size: 2.2em;
+        }
+
+        p{
+            font-size: 1.7em;
+        }
+    }
+}
+
+@media screen and(min-width:600px) {
+
+}

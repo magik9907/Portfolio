@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="pl-PL">
-<header>
+
+<head>
     <title>Łukasz Milewski - portfolio</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,57 +12,154 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/index.min.css">
 
+    <!-- fonts family -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Sriracha&display=swap" rel="stylesheet">
+
+    <!-- fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"
+        integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg=="
+        crossorigin="anonymous"></script>
 
-</header>
+    <!-- delete when creating will end -->
+    <meta name="robots" content="noindex nofollow" />
+</head>
 
-<body class="landingpage">
-    <header class="prezentation">
-        <div class="title">
-            <h1>Łukasz Milewski</h1>
-            <p>developer z pasji</p>
-        </div>
-        <div class="wrapper">
-            <ul class="specialization">
-                <li>
-                    <h3>
-                        Front-end Developer
-                    </h3>
-                </li>
-                <li>
-                    <h3>
-                        ReactJS Developer
-                    </h3>
-                </li>
-                <li>
-                    <h3>
-                        JavaScript Developer
-                    </h3>
-                </li>
-            </ul>
-            <div class="social">
-                <a href="https://www.linkedin.com/in/luki-m/" title="linkedin" target="_blank"
-                    rel="noreferrer noopener"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/magik9907" title="github" target="_blank" rel="noreferrer noopener"><i
-                        class="fab fa-github-square"></i></a>
+<body>
+
+    <body class="landingpage">
+        <header class="closed">
+            <div class="menu-burger">
+                <span class="burger"></span>
             </div>
-        </div>
-    </header>
+
+            <div class="title">
+                <h1>Łukasz Milewski</h1>
+                <p>developer z pasji</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#prezentation" title="Strona główna">Strona główna</a></li>
+                    <li><a href="index.html#about" title="O mnie">O mnie</a></li>
+                    <li><a href="index.html#projects" title="Projekty">Projekty</a></li>
+                    <li><a href="index.html#contact" title="Kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="prezentation" class="prezentation">
+
+                <div class="title">
+                    <p class="fullName">Łukasz Milewski</p>
+                    <p>developer z pasji</p>
+                </div>
+                <div class="dev-cont">
+                    <ul>
+                        <li>
+                            <h3>
+                                Front-End Developer
+                            </h3>
+                        </li>
+                        <li>
+                            <h3>
+                                ReactJS Developer
+                            </h3>
+                        </li>
+                        <li>
+                            <h3>
+                                JavaScript Developer
+                            </h3>
+                        </li>
+                    </ul>
+                    <div class="fast-contact">
+                        <a href="https://www.linkedin.com/in/luki-m/" title="linkedin" target="_blank"
+                            rel="noreferrer noopener"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/magik9907" title="github" target="_blank"
+                            rel="noreferrer noopener"><i class="fab fa-github-square"></i></a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about" id="about">
+                <p class="question">Kim jestem?</p>
+                <p>Człowiekiem lubiącym wyzwania i nie bojącym się pracy. Interesuje się JavaScriptem i piłką nożną.
+                    Chętnym dalszego rozwoju i poszerzania więdzy nie tylko w zakresie JS ale również jego framework-ów
+                    i NodeJS-a, oraz innych języków programowania.</p>
+                <p>Świadomy, że każdy popełnia błędy i może przed refactoryzacją stworzyć mało wydajny kod</p>
+                <div class="technology">
+                    <p>Technologie które wykorzystuję:</p>
+                    <div>
+                        <span class="js"><i class="fab fa-js"></i></span><span class="reactjs"><i
+                                class="fab fa-react"></i></span><span class="scss"><i
+                                class="fab fa-sass"></i></span><span class="css"><i
+                                class="fab fa-css3-alt"></i></span><span class="html"><i
+                                class="fab fa-html5"></i></span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="projects" id="projects">
+                <p>Soon or look my <a href="https://github.com/magik9907" title="github" target="_blank"
+                        rel="noreferrer noopener">github <i class="fab fa-github-square"></i></a></p>
+            </section>
+
+            <section class="contact" id="contact">
+
+                <div>
+                    <form action="mailto:lukaszmilewski99@gmail.com" method="post" id="contact-form" name="contact"
+                        data-netlify="true"  data-netlify-recaptcha="true">
+
+                        <div class="input-row">
+                            <label for="contact-email">E-mail:</label><input type="email" id="contact-email"
+                                name="contact[email]" required>
+                        </div>
+                        <div class="input-row">
+                            <label for="contact-title">Tytuł:</label><input type="text" id="contact-title"
+                                name="contact[title]">
+                        </div>
+                        <div class="input-row">
+                            <textarea name="contact[text]" id="contact-text" cols="30" rows="10" required
+                                placeholder="Wiadomość"></textarea>
+                        </div>
+                        <div data-netlify-recaptcha="true"></div>
+                        <div class="input-row"><button type="submit">Wyślij</button></div>
+                    </form>
+                </div>
+                <div class="social">
+                    <a href="mailto:lukaszmilewski99@gmail.com">lukaszmilewski99<wbr>@gmail.com</a>
+                    <div class="social-link">
+                        <a href="https://www.linkedin.com/in/luki-m/" title="linkedin" target="_blank"
+                            rel="noreferrer noopener"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/magik9907" title="github" target="_blank"
+                            rel="noreferrer noopener"><i class="fab fa-github-square"></i></a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <footer>
+
+        </footer>
 
 
-    <p class="build-page-message"
-        style="width:200px;height:auto;background-color: gray;color:white;padding : 20px;border-radius: 20px;position: fixed; right:20px;bottom:20px;display: none;"
-        onClick="this.style.display = 'none'">
-        <span style="position: absolute; top:10px; right:10px; color:red;">X</span>
-        Strona internetowa jest w budowie<br />
-        Web page nder Contruction
-    </p >
-    <script>
-        window.onload = () => {
-            const messageElement = document.querySelector(".build-page-message");
-            messageElement.style.display = "block";
-        }
-    </script>
+        <p class="build-page-message"
+            style="height:auto;background-color: gray;color:white;padding : 20px;border-radius: 20px;position: fixed; right:20px;bottom:20px;display: none;z-index:100;cursor: pointer;"
+            onClick="this.style.display = 'none'">
+            <span style="position: absolute; top:10px; right:10px; color:red; ">X</span>
+            Strona internetowa jest w budowie<br />
+            Web page under contruction
+        </p>
+        <script>
+            document.querySelector("header .menu-burger").addEventListener("click", () => {
+                document.querySelector("header").classList.toggle("closed");
+            })
+
+            window.onload = () => {
+                const messageElement = document.querySelector(".build-page-message");
+                //   messageElement.style.display = "block";
+            }
+        </script>
+    </body>
 </body>
 
 </html>
