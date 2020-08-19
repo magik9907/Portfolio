@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Strona Główna",
+        "slug": "/#prezentation"
+    },
+    {
+        "name": "O mnie",
+        "slug": "/#about"
+    },
+    {
+        "name": "Projekty",
+        "slug": "/#projects"
+    },
+    {
+        "name": "Kontakt",
+        "slug": "/#contact"
+    }
+]

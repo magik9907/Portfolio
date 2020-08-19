@@ -17,20 +17,7 @@ section {
     }
 
     &::after {
-        content: '';
-        z-index: -10;
-        border-style: solid;
-        border-top-color: $bgc-main;
-        border-left-color: $bgc-main;
-        border-right-color: $bgc-add;
-        border-bottom-color: $bgc-add;
-        border-right-width: 50vw;
-        border-top-width: 50vh;
-        border-bottom-width: 50vh;
-        border-left-width: 50vw;
-        position: absolute;
-        left: 0;
-        top: 0;
+        @include traingleBgc($bgc-main, $bgc-add);
     }
 
     .title {
@@ -87,6 +74,11 @@ section {
         width: 100%;
         display: flex;
         justify-content: space-evenly;
+
+        span {
+            display: inline-block;
+            text-indent: -9999px;
+        }
     }
 }
 
@@ -164,6 +156,10 @@ section {
     color: $font-bgc-main;
     padding: 10px;
 
+    h3 {
+        @extend %font-title;
+    }
+
     label {
         color: $add-color;
         @extend %font-title;
@@ -224,23 +220,10 @@ section {
     }
 
     &::after {
-        content: '';
-        border-style: solid;
-        border-top-color: $bgc-add;
-        border-left-color: $bgc-add;
-        border-right-color: $bgc-main;
-        border-bottom-color: $bgc-main;
-        border-right-width: 49vw;
-        border-top-width: 50vh;
-        border-bottom-width: 50vh;
-        border-left-width: 50vw;
-        z-index: -10;
-        position: absolute;
-        left: 0;
-        top: 0;
+        @include traingleBgc($bgc-add, $bgc-main);
         display: block;
         width: 100%;
-        height: 100%; 
+        height: 100%;
     }
 
     .social {
@@ -257,6 +240,11 @@ section {
         margin-top: 10px;
         display: flex;
         justify-content: space-evenly;
+
+        span {
+            display: inline-block;
+            text-indent: -9999px;
+        }
     }
 
 }
@@ -336,6 +324,11 @@ section {
     }
 
     .contact {
+
+        h3 {
+            font-size: 1.8em;
+        }
+
         label {
             font-size: 1.4em;
             white-space: nowrap;
@@ -359,7 +352,6 @@ section {
 
 @media screen and(min-width:900px) {
     .contact {
-        height: 100vh;
         display: flex;
         align-items: center;
         flex-direction: column;

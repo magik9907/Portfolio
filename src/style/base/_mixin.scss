@@ -1,0 +1,30 @@
+@mixin burger($bgc, $top, $left, $height, $width, $deg) {
+    background-color: $bgc;
+    display: block;
+    width: $height;
+    height: $width;
+    position: absolute;
+    top: $top;
+    left: $left;
+    transition: top 1s, transform 1s;
+    transform: rotateZ($deg);
+
+}
+
+
+@mixin traingleBgc ($lefttop, $rightbottom) {
+    content: '';
+    z-index: -10;
+    border-style: solid;
+    border-top-color: $lefttop;
+    border-left-color: $lefttop;
+    border-right-color: $rightbottom;
+    border-bottom-color: $rightbottom;
+    border-right-width: 49vw;
+    border-top-width: 50vh;
+    border-bottom-width: 50vh;
+    border-left-width: 49vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
