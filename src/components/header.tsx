@@ -1,13 +1,11 @@
-import React from "react"
-import { Link } from "gatsby"
-import List from "./list/List"
+import React, { useState } from "react"
+import Nav from "./nav"
 
 function Header() {
-
+    const [isClosed, setIsClosed] = useState(true)
 
     return (
-        <header>
-         {/* <header className="closed"> */}
+        <header className={(isClosed)?"closed":""} onClick={() => setIsClosed(!isClosed)}>
             <div className="menu-burger">
                 <span className="burger"></span>
             </div>
@@ -16,16 +14,9 @@ function Header() {
                     <h1>Łukasz Milewski</h1>
                     <p>developer z pasji</p>
                 </div>
-                <nav>
-                    <List items={[
-                        <Link to="/#prezentation" >Strona Główna</Link>,
-                        <Link to="/#about" >O mnie</Link>,
-                        <Link to="/#projects" >"Projekty"</Link>,
-                        <Link to="/#contact" >Kontakt</Link>,
-                    ]} />
-                </nav>
+                <Nav />
             </div>
-        </header>
+        </header >
     )
 }
 

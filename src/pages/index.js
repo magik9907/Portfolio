@@ -2,6 +2,7 @@ import React from "react"
 
 import Layout from "../components/layout"
 import List from "../components/list/List"
+import { ContactForm } from "../components/form/contactForm"
 
 const IndexPage = () => (
   <Layout title={"Strona Główna"}>
@@ -54,28 +55,8 @@ const IndexPage = () => (
       <section className="contact" id="contact">
         <h3>Kontakt</h3>
         <div>
-          <form method="POST" action="POST" id="contact-form" name="contact" data-netlify="true"
-            data-netlify-recaptcha="true">
-            <div className="wrap">
-              <div className="input-row">
-                <label htmlFor="contact-email">E-mail:</label><input type="email" id="contact-email"
-                  name="email" required />
-              </div>
-              <div className="input-row">
-                <label htmlFor="contact-title">Tytuł:</label><input type="text" id="contact-title"
-                  name="title" />
-              </div>
-            </div>
-            <div className="input-row">
-              <label htmlFor="contact-text">Wiadoność</label>
-              <textarea name="text" id="contact-text" cols="30" rows="10" required
-                placeholder="Wiadomość" ></textarea>
-            </div>
-            <div className="wrap">
-              <div data-netlify-recaptcha="true" className="recaptcha input-row"></div>
-              <div className="input-row"><button type="submit">Wyślij</button></div>
-            </div>
-          </form>
+          <ContactForm method="POST"></ContactForm>
+          
         </div>
         <div className="social">
           <a href="mailto:lukaszmilewski99@gmail.com">lukaszmilewski99<wbr />@gmail.com</a>

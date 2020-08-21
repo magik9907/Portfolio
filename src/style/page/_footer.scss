@@ -1,6 +1,13 @@
-footer{
-    p{
+footer {
+    margin-top: 15px;
+    position: relative;
+    z-index: 10;
+    background-color: $bgc-add;
+    padding: 10px;
+
+    p {
+        @extend %font-paragraph;
         text-align: center;
-        color:$font-bgc-add;
+        color: $font-bgc-main;
     }
 }

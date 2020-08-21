@@ -153,6 +153,7 @@ section {
 }
 
 .contact {
+    max-width: 100%;
     color: $font-bgc-main;
     padding: 10px;
 
@@ -164,6 +165,10 @@ section {
         color: $add-color;
         @extend %font-title;
         font-size: 1.2em;
+    }
+
+    a {
+        @extend %font-paragraph;
     }
 
     a,
@@ -190,6 +195,7 @@ section {
     }
 
     textarea {
+        height: 150px;
         resize: vertical;
         line-height: 1.5em;
     }
@@ -206,6 +212,7 @@ section {
     }
 
     .input-row {
+        padding: 0 10px;
         display: flex;
         flex-direction: column;
         margin-top: 15px;
@@ -249,6 +256,17 @@ section {
 
 }
 
+@media screen and(max-height:520px) {
+    .prezentation {
+        .title {
+            top: 10px;
+        }
+
+        .dev-cont {
+            top: 50vh;
+        }
+    }
+}
 
 @media screen and(max-width:300px) {
     .prezentation {
@@ -270,10 +288,15 @@ section {
     }
 }
 
-@media screen and(min-width:390px) {}
 
 @media screen and(min-width:600px) {
     .prezentation {
+
+        &::after {
+            border-right-width: 49vw;
+            border-left-width: 48vw;
+        }
+
         svg {
             font-size: 3em;
         }
@@ -325,6 +348,11 @@ section {
 
     .contact {
 
+        &::after {
+            border-right-width: 49vw;
+            border-left-width: 48vw;
+        }
+
         h3 {
             font-size: 1.8em;
         }
@@ -342,24 +370,53 @@ section {
             line-height: 1.6em;
         }
 
+        textarea {
+            height: 250px;
+        }
+
         .input-row {
             align-items: center;
             flex-direction: row;
+
+            &.textarea {
+                flex-direction: column;
+            }
         }
 
     }
 }
 
 @media screen and(min-width:900px) {
+.prezentation{
+    
+    &::after {
+        border-right-width: 49vw;
+        border-left-width: 49vw;
+    }
+}
+
     .contact {
+
+        &::after {
+            border-right-width: 49vw;
+            border-left-width: 49vw;
+        }
+
+        width: 100%;
+        min-height: 100%;
         display: flex;
         align-items: center;
         flex-direction: column;
+        height: 100%;
 
         .wrap {
             display: grid;
             grid-template-columns: 1fr 1fr;
             column-gap: 20px;
+        }
+
+        &::after {
+            border-right-width: 40vw;
         }
     }
 }

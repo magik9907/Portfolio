@@ -15,7 +15,6 @@ export default function List(props: PropsType) {
     
     const itemGenerator  = (x: PropsItemType, index ) => {return(<ListItem key={index}>{x}</ListItem>)};
     const listItems = items.map(itemGenerator);
-    console.log(listItems);
     
     return (
         <div className={props.containerClass}>
