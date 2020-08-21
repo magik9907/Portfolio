@@ -1,7 +1,7 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import List from "../components/list/List"
+import List from "../components/list/list"
 import { ContactForm } from "../components/form/contactForm"
 
 const IndexPage = () => (
