@@ -387,13 +387,13 @@ section {
 }
 
 @media screen and(min-width:900px) {
-.prezentation{
-    
-    &::after {
-        border-right-width: 49vw;
-        border-left-width: 49vw;
+    .prezentation {
+
+        &::after {
+            border-right-width: 49vw;
+            border-left-width: 49vw;
+        }
     }
-}
 
     .contact {
 
@@ -416,7 +416,7 @@ section {
         }
 
         &::after {
-            border-right-width: 40vw;
+            border-right-width: 50vw;
         }
     }
 }

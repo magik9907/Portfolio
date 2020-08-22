@@ -82,7 +82,9 @@ function SEO({ description, lang, meta, title }) {
       <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"
         integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg=="
         crossorigin="anonymous" />
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>npm 
+      <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+      </script>
     </Helmet >
   )
 }
