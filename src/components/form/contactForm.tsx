@@ -1,4 +1,5 @@
 import React from 'react'
+import RecaptchaAuth from './recaptchaAuth'
 // import Recaptcha from 'react-recaptcha'
 
 export function ContactForm(props) {
@@ -25,10 +26,7 @@ export function ContactForm(props) {
           placeholder="Wiadomość" ></textarea>
       </div>
       <div className="wrap">
-        <div data-netlify-recaptcha="true" className="recaptcha input-row">
-        <div className="g-recaptcha" data-sitekey="6LcIG8IZAAAAAHYcJXDxiEEYVN9MF6Sft25RMAL5"></div>
-          {/* <Recaptcha sitekey="6LcIG8IZAAAAAHYcJXDxiEEYVN9MF6Sft25RMAL5" render="explicit" /> */}
-        </div>
+        <RecaptchaAuth></RecaptchaAuth>
         <div className="input-row"><button type="submit">Wyślij</button></div>
       </div>
     </form>
