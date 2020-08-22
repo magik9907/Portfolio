@@ -1,13 +1,13 @@
 import React from 'react'
+// import Recaptcha from 'react-recaptcha'
 
 export function ContactForm(props) {
 
-
   return (
-    <form data-netlify="true" action={props.action} method={props.method} id="contact-form" name="contact" data-netlify-recaptcha="true" netlify-honeypot="bot-field">
+    <form action={props.action} method={props.method} id="contact-form" name="contact" data-netlify-recaptcha="true" data-netlify="true" netlify-honeypot="bot-field">
       <div>
         <input type="hidden" name="bot-field" />
-+   <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="form-name" value="contact" />
       </div>
       <div className="wrap">
         <div className="input-row">
@@ -25,7 +25,10 @@ export function ContactForm(props) {
           placeholder="Wiadomość" ></textarea>
       </div>
       <div className="wrap">
-        <div data-netlify-recaptcha="true" className="recaptcha input-row"></div>
+        <div data-netlify-recaptcha="true" className="recaptcha input-row">
+        <div className="g-recaptcha" data-sitekey="6LcIG8IZAAAAAHYcJXDxiEEYVN9MF6Sft25RMAL5"></div>
+          {/* <Recaptcha sitekey="6LcIG8IZAAAAAHYcJXDxiEEYVN9MF6Sft25RMAL5" render="explicit" /> */}
+        </div>
         <div className="input-row"><button type="submit">Wyślij</button></div>
       </div>
     </form>
