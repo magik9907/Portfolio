@@ -85,6 +85,7 @@ function SEO({ description, lang, meta, title }) {
       <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
         async defer>
       </script>
+      <meta name="google-site-verification" content="lZoAuFjAYp46oj8FrxRolsjRcB0ecvWH5KC1r2D_jr8" />
     </Helmet >
   )
 }
