@@ -190,9 +190,10 @@ export function ContactForm(props: IProp) {
   }
 
   return (
-    <form action={props.action || ""} method={props.method || ""} id="contact-form" name="contact" data-netlify-recaptcha="true" data-netlify="true" netlify-honeypot="botField" noValidate onSubmit={onSubmit}>
+    <form action={props.action || ""} method={props.method || ""} id="contact-form" name="contact" data-netlify-recaptcha="true" data-netlify="true"  noValidate onSubmit={onSubmit}>
       <div>
-        <input type="hidden" name="botField" onChange={onChangeValidation} />
+        <label htmlFor="botFieldInput"> Don't fill</label>
+        <input type="hidden" name="botField" id="botFieldInput" onChange={onChangeValidation} />
       </div>
       <div className="wrap">
         <div className="row">
