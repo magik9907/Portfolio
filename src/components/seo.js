@@ -83,8 +83,7 @@ function SEO({ description, lang, meta, title }) {
         integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg=="
         crossorigin="anonymous" />
       <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-        async defer>
-      </script>
+        async defer />
     </Helmet >
   )
 }
@@ -94,6 +93,7 @@ SEO.defaultProps = {
   meta: [],
   description: ``,
   keywords: '',
+  author:'',
 }
 
 SEO.propTypes = {
@@ -102,6 +102,7 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
   keywords: PropTypes.string,
+  author: PropTypes.string,
 }
 
 export default SEO

@@ -1,12 +1,14 @@
-import React from 'react'
-import Layout from '../components/layout'
+import React from "react"
+import Layout from "../components/layout"
 
+import './success.scss'
 
-const Success =     (props) => {
-
+const Success = () => {
     return (
-        <Layout title={"Wysłano"}>
-            <p style={{ fontSize: "3em" }}>Wiadomość wysłana</p>
+        <Layout title={"Sukces"}>
+            <main>
+                <h4>Wiadomość wysłana</h4>
+            </main>
         </Layout>
     )
 }
