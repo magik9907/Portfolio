@@ -38,6 +38,8 @@ import React, { useState } from 'react'
 import RecaptchaAuth from './recaptchaAuth'
 import { ErrorList } from './errorList';
 
+import './contactForm.scss'
+
 export interface IProp {
   action?: string;
   method?: string
@@ -191,9 +193,10 @@ export function ContactForm(props: IProp) {
 
   return (
     <form action={props.action || ""} method={props.method || ""} id="contact-form" name="contact" data-netlify-recaptcha="true" data-netlify="true"  noValidate onSubmit={onSubmit} netlify-honeypot="botField">
-      <div>
+      <div className="secure">
         <label htmlFor="botFieldInput"> Don't fill</label>
         <input type="hidden" name="botField" id="botFieldInput" onChange={onChangeValidation} />
+        <input type="hidden" name="form-name" value="contact" />
       </div>
       <div className="wrap">
         <div className="row">
