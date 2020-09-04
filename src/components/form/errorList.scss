@@ -1,0 +1,15 @@
+@import '../../style/base/var';
+@import '../../style/base/placeholder';
+.error {
+    @extend %font-paragraph;
+    list-style-type: none;
+    padding: 0;
+    color: #fff;
+    
+    li {
+        padding:3px;
+        text-align: center;
+        margin-top:5px;
+        background-color: #f00;
+    }
+}
