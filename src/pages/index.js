@@ -56,7 +56,7 @@ const IndexPage = () => {
         <section className="contact" id="contact">
           <h3>Kontakt</h3>
           <div>
-            <ContactForm method="POST" action="/success" ></ContactForm>
+            <ContactForm method="POST" ></ContactForm>
 
           </div>
           <div className="social">
