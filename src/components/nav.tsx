@@ -1,7 +1,7 @@
 import React from "react"
 import List from "./list/List"
 import { Link } from "gatsby"
-
+import './nav.scss'
 const Nav = () => {
     
     const links = [

@@ -4,6 +4,8 @@ import Layout from "../components/layout"
 import List from "../components/list/list"
 import { ContactForm } from "../components/form/contactForm"
 
+import './index.scss'
+
 const IndexPage = () => {
   return (
     <Layout title={"Strona Główna"}>

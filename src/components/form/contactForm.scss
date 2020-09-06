@@ -1,4 +1,181 @@
-.secure{
-    visibility: hidden;
-    height: 0px;
+@import '../../style/style.scss';
+
+.contact {
+    max-width: 100%;
+    color: $font-bgc-main;
+    padding: 10px;
+
+    h3 {
+        @extend %font-title;
+    }
+
+    label {
+        color: $add-color;
+        @extend %font-title;
+        font-size: 1.2em;
+    }
+
+    a {
+        @extend %font-paragraph;
+    }
+
+    a,
+    svg {
+        font-size: 1.3em;
+        color: $font-bgc-main;
+    }
+
+    svg {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    textarea,
+    button,
+    input {
+        height: auto;
+        width: 100%;
+        background-color: $add-color4;
+        color: $font-bgc-main;
+        @extend %font-paragraph;
+        border-color: $add-color5;
+        padding: 10px 15px;
+    }
+
+    textarea {
+        height: 150px;
+        resize: vertical;
+        line-height: 1.5em;
+    }
+
+    button {
+        text-transform: uppercase;
+        font-size: 1.3em;
+        cursor: pointer;
+    }
+
+    h3 {
+        font-size: 1.3em;
+        color: $add-color4;
+    }
+
+    .secure{
+        visibility: hidden;
+        height: 0px;
+    }
+
+    .input-row {
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    .recaptcha {
+        justify-content: center;
+
+        iframe {
+            height: 78px;
+        }
+    }
+
+    &::after {
+        @include traingleBgc($bgc-add, $bgc-main);
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .social {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background-color: $add-color4;
+        margin-top: 20px;
+        border-radius: 15px;
+        padding: 10px;
+    }
+
+    .social-link {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-evenly;
+
+        span {
+            display: inline-block;
+            text-indent: -9999px;
+        }
+    }
+
+}
+
+@media screen and(min-width:600px) {
+
+    .contact {
+
+        &::after {
+            border-right-width: 49vw;
+            border-left-width: 48vw;
+        }
+
+        h3 {
+            font-size: 1.8em;
+        }
+
+        label {
+            font-size: 1.4em;
+            white-space: nowrap;
+            margin-right: 15px;
+        }
+
+        input,
+        textarea,
+        button {
+            font-size: 1.4em;
+            line-height: 1.6em;
+        }
+
+        textarea {
+            height: 250px;
+        }
+
+        .input-row {
+            align-items: center;
+            flex-direction: row;
+
+            &.textarea {
+                flex-direction: column;
+            }
+        }
+
+    }
+}
+
+@media screen and(min-width:900px) {
+    
+
+    .contact {
+
+        &::after {
+            border-right-width: 49vw;
+            border-left-width: 49vw;
+        }
+
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+
+        .wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+        }
+
+        &::after {
+            border-right-width: 50vw;
+        }
+    }
 }

@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
+
 export default function RecaptchaAuth(props) {
     const [isChecked, setIsChecked] = useState(false);
-    var onloadCallback = function () {
+    var onLoadCallback =  () => {
         alert("recaptcha is ready!");
     };
 
@@ -15,7 +16,9 @@ export default function RecaptchaAuth(props) {
 
     return (
         <div className={(isChecked)? "checked recaptcha input-row " :" recaptcha input-row "}>
-            {/* <div className="g-recaptcha" data-sitekey="6LcIG8IZAAAAAHYcJXDxiEEYVN9MF6Sft25RMAL5"></div> */}
-            <ReCAPTCHA sitekey="6LcIG8IZAAAAAHYcJXDxiEEYVN9MF6Sft25RMAL5" onChange={onChange} onLoad={onloadCallback} />
+            <ReCAPTCHA 
+            sitekey="6LcIG8IZAAAAAHYcJXDxiEEYVN9MF6Sft25RMAL5" 
+            onChange={onChange} 
+            onLoad={onLoadCallback} />
         </div>)
 }

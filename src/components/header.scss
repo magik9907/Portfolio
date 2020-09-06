@@ -1,3 +1,5 @@
+@import '../style/style.scss';
+
 header {
     width: 75%;
     height: 100vh;
@@ -35,46 +37,7 @@ header {
             font-size: 0.8em;
         }
     }
-
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-
-        li {
-            @extend %font-paragraph;
-            max-width: 100%;
-            width: 200px;
-            margin: 20px auto 0px auto;
-            text-align: center;
-
-            &:first-child {
-                margin-top: 0;
-            }
-        }
-    }
-
-    nav {
-        margin-top: 40px;
-
-        li {
-            position: relative;
-            font-size: 1.1em;
-            padding: 5px 15px;
-            text-transform: uppercase;
-            border-radius: 20px;
-
-            &:hover {
-                border: 3px solid $add-color4;
-            }
-
-            &:active {
-                border-style: outset;
-                border: 3px solid $font-bgc-main;
-            }
-        }
-    }
-
+    
     &.closed {
         right: -75%;
 

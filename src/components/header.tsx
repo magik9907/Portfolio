@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import Nav from "./nav"
+import './header.scss'
 
 function Header() {
     const [isClosed, setIsClosed] = useState(true)

@@ -5,4 +5,3 @@
  */
 
 // You can delete this file if you're not
-import './src/css/index.min.css'

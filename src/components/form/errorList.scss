@@ -1,5 +1,5 @@
-@import '../../style/base/var';
-@import '../../style/base/placeholder';
+@import '../../style/style.scss';
+
 .error {
     @extend %font-paragraph;
     list-style-type: none;
