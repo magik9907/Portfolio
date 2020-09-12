@@ -1,17 +1,21 @@
-import React, { Children } from 'react'
+import React, { useContext } from 'react'
 
 import Footer from './footer'
 import Header from './header'
 import SEO from './seo'
-import LanguageProvider from '../context/languageContext'
+import LanguageContext from '../context/languageContext'
 
-const Layout = ({ children, ...props }) => (
-    <LanguageProvider>
-        <SEO title={props.title}></SEO>
-        <Header></Header>
-        <main>{children}</main>
-        <Footer></Footer>
-    </LanguageProvider>
-)
+const Layout = ({ children, ...props }) => {
+    const languageContext = useContext(LanguageContext)
+
+    return (
+        <>
+            <SEO title={props.title} lang={languageContext.lang}></SEO>
+            <Header></Header>
+            <main>{children}</main>
+            <Footer></Footer>
+        </>
+    )
+}
 
 export default Layout

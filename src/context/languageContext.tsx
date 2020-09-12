@@ -5,20 +5,19 @@ const defaultLanguage = {
     changeLanguage: (language) => { },
 }
 
-type ContextProps = {
+interface ILanguageContext {
     lang: string,
     changeLanguage: (language: String) => void,
 };
 
+const LanguageContext = React.createContext(defaultLanguage as ILanguageContext);
 
-export const LanguageContext = React.createContext<ContextProps>(defaultLanguage);
-
-export default class LanguageProvider extends React.Component<{},{language:string}> {
+class LanguageProvider extends React.Component<{}, { language: string }> {
 
     constructor(props) {
         super(props);
         const localization = navigator.language;
-        const isPl = (localization.split('-')[0] === 'pl');
+        const isPl: boolean = (localization.split('-')[0] === 'pl');
         this.state = {
             language: this.lang[(isPl) ? 'pl' : 'en'].value
         };
@@ -33,22 +32,25 @@ export default class LanguageProvider extends React.Component<{},{language:strin
         }
     }
 
-    changeLanguage = (language:string) => {
-        console.log(language);
-
-        this.setState({ language: this.lang[language] })
+    changeLanguage = (language: string) => {
+        this.setState({ language: this.lang[language].value })
     }
 
     render() {
-        const {children} = this.props;
+        const { children } = this.props;
         const { language } = this.state;
+        const value = {
+            lang: language,
+            changeLanguage: this.changeLanguage
+        }
+
         return (
-            <LanguageContext.Provider value={{
-                lang: language,
-                changeLanguage: this.changeLanguage
-            }}>
+            <LanguageContext.Provider value={value as ILanguageContext}>
                 {children}
             </LanguageContext.Provider>
         )
     }
 }
+
+export { LanguageProvider }
+export default LanguageContext

@@ -1,7 +1,9 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import LanguageContext from '../context/languageContext';
+
+import './language.scss'
 
 function Language() {
     const query = useStaticQuery(graphql`
@@ -24,13 +26,20 @@ function Language() {
     `)
 
     if (!query) return (<div />)
-
     const languageContext = useContext(LanguageContext)
+
+    const onclick = (lang: string) => {
+        languageContext.changeLanguage(lang)
+    }
 
     return (
         <div className="language">
-            <div onClick={()=>languageContext.changeLanguage('pl')}>  <Img fluid={query.pl.childImageSharp.fluid} /></div>
-            <div onClick={()=>languageContext.changeLanguage('en')}>            <Img fluid={query.en.childImageSharp.fluid} /></div>
+            <div onClick={() => onclick('pl')}>
+                <Img fluid={query.pl.childImageSharp.fluid} />
+            </div>
+            <div onClick={() => onclick('en')}>
+                <Img fluid={query.en.childImageSharp.fluid} />
+            </div>
         </div>
     )
 }
