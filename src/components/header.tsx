@@ -1,6 +1,9 @@
 import React, { useState } from "react"
 import Nav from "./nav"
 import './header.scss'
+import Social from "./social"
+import Language from "./language"
+
 
 function Header() {
     const [isClosed, setIsClosed] = useState(true)
@@ -15,6 +18,8 @@ function Header() {
                     <h2>Łukasz Milewski<br /> <span>developer z pasji</span></h2>
                 </div>
                 <Nav />
+                <Social></Social>
+                <Language></Language>
             </div>
         </header >
     )

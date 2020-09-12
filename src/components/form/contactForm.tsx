@@ -67,6 +67,10 @@ type TState = {
       isChecked: { value: Boolean; };
       feedback: Array<string>;
     };
+    rodo: {
+      isChecked: { value: Boolean; };
+      feedback: Array<string>;
+    };
     botField: {
       isEmpty: { value: Boolean; };
       feedback: Array<string>;
@@ -97,6 +101,10 @@ const initialState: TState = {
       feedback: [],
       isChecked: { value: false, }
     },
+    rodo: {
+      feedback: [],
+      isChecked: { value: false, }
+    },
     botField: {
       feedback: [],
       isEmpty: { value: true, }
@@ -117,8 +125,7 @@ export function ContactForm(props: IProp) {
       }
       copyState.inputs['recaptcha']['isChecked'].value = e;
     } else {
-      const TARGET: HTMLTextAreaElement | HTMLInputElement = e.target;
-      console.log(state, TARGET, TARGET.value);
+      const TARGET = e.target;
       if (TARGET === undefined)
         return;
       const NAME = TARGET.name;
@@ -129,8 +136,12 @@ export function ContactForm(props: IProp) {
       for (let x in RULES) {
         status = false;
         if (x === 'feedback') continue;
-        console.log(x);
         switch (x) {
+          case 'isChecked':
+            status = TARGET.checked;
+            console.log(status);
+
+            break;
           case 'isRegexp':
             regexp = copyState.inputs[NAME][x].regexp;
             status = regexp.test(TARGET.value);
@@ -153,10 +164,9 @@ export function ContactForm(props: IProp) {
       }
     }
     setState(copyState);
-    console.log(state);
   }
 
-  function onSubmit(event ) {
+  function onSubmit(event) {
     event.preventDefault();
 
     let status = true;
@@ -192,9 +202,8 @@ export function ContactForm(props: IProp) {
   }
 
   return (
-    <form action={props.action || ""} method={props.method || ""} id="contact-form" name="contact" data-netlify-recaptcha="true" data-netlify="true"  noValidate onSubmit={onSubmit} netlify-honeypot="botField">
+    <form action={props.action || ""} method={props.method || ""} id="contact-form" name="contact" data-netlify-recaptcha="true" data-netlify="true" noValidate onSubmit={onSubmit} netlify-honeypot="botField">
       <div className="secure">
-        <label htmlFor="botFieldInput"> Don't fill</label>
         <input type="hidden" name="botField" id="botFieldInput" onChange={onChangeValidation} />
         <input type="hidden" name="form-name" value="contact" />
       </div>
@@ -223,10 +232,20 @@ export function ContactForm(props: IProp) {
         <ErrorList key="feedback-text" feedback={state.inputs.text.feedback} />
       </div>
       <div className="row">
+        <ul>
+          <li>
+            <div className="input-row">
+              <input type="checkbox" name="rodo" id="contact-rodo" required onChange={onChangeValidation} /> <label htmlFor="contact-rodo">RODO</label>
+            </div>
+            <ErrorList key="feedback-rodo" feedback={state.inputs.rodo.feedback} />
+          </li>
+        </ul>
+      </div>
+      <div className="row">
         <RecaptchaAuth onChange={onChangeValidation}></RecaptchaAuth>
         <ErrorList key="feedback-captcha" feedback={state.inputs.recaptcha.feedback} />
       </div>
       <div className="input-row"><button type="submit" >Wyślij</button></div>
-    </form>
+    </form >
   )
 }

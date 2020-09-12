@@ -9,6 +9,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import '../style/index.scss'
+
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -74,14 +76,10 @@ function SEO({ description, lang, meta, title }) {
         },
       ].concat(meta)}
     >
+      <link rel="icon" href={'favicon.ico'} />
       {/* fonts family  */}
       <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Sriracha&display=swap" rel="stylesheet" />
 
-      {/*fontawesome  */}
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"
-        integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg=="
-        crossorigin="anonymous" />
       <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
         async defer />
     </Helmet >
@@ -89,11 +87,11 @@ function SEO({ description, lang, meta, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `pl`,
+  lang: `en`,
   meta: [],
   description: ``,
   keywords: '',
-  author:'',
+  author: '',
 }
 
 SEO.propTypes = {

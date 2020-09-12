@@ -32,9 +32,10 @@
 
     textarea,
     button,
-    input {
-        height: auto;
+    input:not([TYPE=CHECKBOX]):not([TYPE=RADIO])
+    {
         width: 100%;
+        height: auto;
         background-color: $add-color4;
         color: $font-bgc-main;
         @extend %font-paragraph;
@@ -59,7 +60,7 @@
         color: $add-color4;
     }
 
-    .secure{
+    .secure {
         visibility: hidden;
         height: 0px;
     }
@@ -94,18 +95,15 @@
         margin-top: 20px;
         border-radius: 15px;
         padding: 10px;
-    }
+        text-align: center;
+        align-items: center;
 
-    .social-link {
-        margin-top: 10px;
-        display: flex;
-        justify-content: space-evenly;
-
-        span {
-            display: inline-block;
-            text-indent: -9999px;
+        a {
+            width: fit-content;
         }
     }
+
+
 
 }
 
@@ -152,7 +150,7 @@
 }
 
 @media screen and(min-width:900px) {
-    
+
 
     .contact {
 
