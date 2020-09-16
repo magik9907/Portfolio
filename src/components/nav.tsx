@@ -1,16 +1,30 @@
-import React from "react"
-import List from "./list/List"
+import React, { useContext, useMemo } from "react"
 import { Link } from "gatsby"
+import LanguageContext from '../context/languageContext'
 import './nav.scss'
+import navL from '../data/nav.json'
+
 const Nav = () => {
+
+    const langContext = useContext(LanguageContext)
+    const language = langContext.lang
     
-    const links = [
-        <li key="prezentation"><Link to="/#prezentation" >Strona Główna</Link></li>,
-        <li key="about"><Link to="/#about" >O mnie</Link></li>,
-        <li key="projects"><Link to="/#projects" >Projekty</Link></li>,
-        <li key="contact"><Link to="/#contact" >Kontakt</Link></li>,
-    ];
-    
+    const links = useMemo(()=>{
+        return <ul>
+            {navL.map( elem =>{
+                return <li key={elem.key} ><Link to={elem.link} >{elem.name[language]}</Link></li>
+            })}
+        </ul>
+    },[navL, language])
+
+    // const links = [
+    //     <li key="prezentation"><Link to="/#prezentation" >Strona Główna</Link></li>,
+    //     <li key="about"><Link to="/#about" >O mnie</Link></li>,
+    //     <li key="projects"><Link to="/#projects" >Projekty</Link></li>,
+    //     <li key="contact"><Link to="/#contact" >Kontakt</Link></li>,
+    // ];
+
+
     return (
         <nav>
             <ul>{links}</ul>

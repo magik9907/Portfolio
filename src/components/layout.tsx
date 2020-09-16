@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-
 import Footer from './footer'
 import Header from './header'
 import SEO from './seo'

@@ -35,10 +35,10 @@ function Language() {
     return (
         <div className="language">
             <div onClick={() => onclick('pl')}>
-                <Img fluid={query.pl.childImageSharp.fluid} />
+                <Img fluid={query.pl.childImageSharp.fluid} title="polski" alt="polski"/>
             </div>
             <div onClick={() => onclick('en')}>
-                <Img fluid={query.en.childImageSharp.fluid} />
+                <Img fluid={query.en.childImageSharp.fluid} title="english" alt="english"/>
             </div>
         </div>
     )

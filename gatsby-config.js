@@ -7,6 +7,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-json`,
     'gatsby-image',
     `gatsby-plugin-sharp`,
     {
@@ -59,7 +60,7 @@ module.exports = {
         name: `images`,
         path: `${__dirname}\\src\\images`,
       },
-    },
+    }, 
     'gatsby-plugin-sass',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

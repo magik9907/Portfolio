@@ -1,0 +1,34 @@
+[
+    {
+        "name": {
+            "pl": "Strona Główna",
+            "en": "Home Page"
+        },
+        "link": "/#prezentation",
+        "key": "prezentation"
+    },
+    {
+        "name": {
+            "pl": "O mnie",
+            "en": "About"
+        },
+        "link": "/#about",
+        "key": "about"
+    },
+    {
+        "name": {
+            "pl": "Projekty",
+            "en": "Projects"
+        },
+        "link": "/#projects",
+        "key": "projects"
+    },
+    {
+        "name": {
+            "pl": "Kontakt",
+            "en": "Contact"
+        },
+        "link": "/#contact",
+        "key": "contact"
+    }
+]
