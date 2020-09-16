@@ -1,12 +1,14 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import Nav from "./nav"
 import './header.scss'
 import Social from "./social"
 import Language from "./language"
+import { useTitle } from "../hooks/useTitle"
 
 
 function Header() {
     const [isClosed, setIsClosed] = useState(true)
+    const title = useTitle()
 
     return (
         <header className={(isClosed) ? "closed" : ""} >
@@ -15,7 +17,7 @@ function Header() {
             </div>
             <div className="wrapper">
                 <div className="title">
-                    <h2>Łukasz Milewski<br /> <span>developer z pasji</span></h2>
+                    <h2>Łukasz Milewski<br /> <span>{title}</span></h2>
                 </div>
                 <Nav />
                 <Social></Social>

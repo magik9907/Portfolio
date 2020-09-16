@@ -1,14 +1,14 @@
 import React from "react"
-
 import Layout from "../components/layout"
 import List from "../components/list/list"
 import { ContactForm } from "../components/form/contactForm"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faJs, faCss3Alt, faHtml5, faSass, faReact} from '@fortawesome/free-brands-svg-icons'
 import './index.scss'
 import Social from "../components/social"
+import { useTitle } from "../hooks/useTitle"
+import Skills from "../components/skills"
 
 const IndexPage = () => {
+  const title = useTitle()
   return (
     <Layout title={"Strona Główna"}>
       <div>
@@ -16,7 +16,7 @@ const IndexPage = () => {
 
           <div className="title">
             <p className="fullName">Łukasz Milewski</p>
-            <p>developer z pasji</p>
+            <p>{title}</p>
           </div>
 
           <div className="dev-cont">
@@ -38,11 +38,7 @@ const IndexPage = () => {
           <div className="technology">
             <p>Technologie które wykorzystuję:</p>
             <div>
-              <span className="js"><FontAwesomeIcon icon={faJs} /></span>
-              <span className="reactjs"><FontAwesomeIcon icon={faReact} /></span>
-                <span className="scss"><FontAwesomeIcon icon={faSass} /></span>
-                  <span className="css"><FontAwesomeIcon icon={faCss3Alt} /></span>
-                    <span className="html"><FontAwesomeIcon icon={faHtml5} /></span>
+              <Skills />
             </div>
           </div>
         </section>

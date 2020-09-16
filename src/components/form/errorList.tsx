@@ -1,25 +1,47 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext, useMemo } from 'react'
+import LanguageContext from '../../context/languageContext'
 import './errorList.scss'
 
-interface IProp {
+type propType = {
     feedback?: Array<string>
 }
 
-export function ErrorList(props: IProp) {
-    const messages = {
-        notEmpty: "Pole nie moze byc puste",
-        isRegexp: "Zły format pola",
-        isChecked: 'Pole jest wymagane'
-    }
+
+export function ErrorList(props: propType) {
     const feedback = props.feedback;
 
     if (!feedback) return < ></>;
 
-    const errorList = feedback.reduce((curr, next) => {
-        curr.push(<li key={next}>{messages[next]}</li>);
-        return curr;
-    }, [])
+    const langContext = useContext(LanguageContext)
 
+    const messages = {
+        notEmpty: {
+            "pl": "Pole nie moze byc puste",
+            "en": "Input cannot be empty"
+        },
+        isRegexp: {
+            'pl': "Niepoprawny format",
+            "en": "Invalid format"
+        },
+        isChecked: {
+            'pl': "Pole jest wymagane",
+            "en": "The field is required"
+        },
+    }
+
+    const errorList = useMemo(()=>{
+        return feedback.reduce((curr, next) => {
+            curr.push(<li key={next}>{messages[next][langContext.lang]}</li>);
+            return curr;
+        }, [])
+    }, [langContext.lang, feedback])
+
+    // const errorList = feedback.reduce((curr, next) => {
+    //     curr.push(<li key={next}>{messages[next][langContext.lang]}</li>);
+    //     return curr;
+    // }, [])
+    console.log(errorList);
+    
     return (
         <ul className="error">
             {errorList}

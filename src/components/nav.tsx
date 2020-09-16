@@ -17,14 +17,6 @@ const Nav = () => {
         </ul>
     },[navL, language])
 
-    // const links = [
-    //     <li key="prezentation"><Link to="/#prezentation" >Strona Główna</Link></li>,
-    //     <li key="about"><Link to="/#about" >O mnie</Link></li>,
-    //     <li key="projects"><Link to="/#projects" >Projekty</Link></li>,
-    //     <li key="contact"><Link to="/#contact" >Kontakt</Link></li>,
-    // ];
-
-
     return (
         <nav>
             <ul>{links}</ul>
