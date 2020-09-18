@@ -152,9 +152,7 @@ export function ContactForm(props: IProp) {
           case 'notEmpty':
             status = (TARGET.value !== '') ? true : false;
             break;
-
-            break;
-        }
+}
 
         if (!status) {
           copyState.inputs[NAME]['feedback'].push(x);
@@ -249,3 +247,19 @@ export function ContactForm(props: IProp) {
     </form >
   )
 }
+
+
+// type PropType = {
+//   action?: string;
+//   method?: string
+// }
+
+// const ContactForm = (props :PropType)=>{
+
+// return (
+//   <>
+//   </>
+// )
+// }
+
+// export default ContactForm
