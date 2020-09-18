@@ -30,7 +30,7 @@ module.exports = {
             description: `Łukasz Milewski developer tworzący w JavaScript-cie i ReactJS.`,
           },
         ],
-        'icon': 'src/icons/favicon-32x32.png',
+        'icon': 'src/favicon/favicon-32x32.png',
         "icons": [
           {
             "src": "/android-chrome-192x192.png",

@@ -3,17 +3,16 @@ import LanguageContext from '../../context/languageContext'
 import './errorList.scss'
 
 type propType = {
-    feedback: Array<string>
+    feedback?: Array<string>
 }
 
-export function ErrorList(props: propType) {
-    const langContext = useContext(LanguageContext)
 
-    if (!props.feedback) return < ul className="error" />;
-    const lang = useMemo(()=>{
-        return langContext.lang
-    },[langContext.lang])
-    const feedback = props.feedback
+export function ErrorList(props: propType) {
+    const feedback = props.feedback;
+
+    if (!feedback) return < ></>;
+
+    const langContext = useContext(LanguageContext)
 
     const messages = {
         notEmpty: {
@@ -30,18 +29,19 @@ export function ErrorList(props: propType) {
         },
     }
 
-    // const errorList = useMemo(() => {
-    //     return feedback.reduce((curr, next) => {
-    //         curr.push(<li key={next}>{messages[next][langContext.lang]}</li>);
-    //         return curr;
-    //     }, [])
-    // }, [langContext.lang, feedback])
+    const errorList = useMemo(()=>{
+        return feedback.reduce((curr, next) => {
+            curr.push(<li key={next}>{messages[next][langContext.lang]}</li>);
+            return curr;
+        }, [])
+    }, [langContext.lang, feedback])
 
-    const errorList = feedback.reduce((curr, next) => {
-        curr.push(<li key={next}>{messages[next][lang]}</li>);
-        return curr;
-    }, [])
-
+    // const errorList = feedback.reduce((curr, next) => {
+    //     curr.push(<li key={next}>{messages[next][langContext.lang]}</li>);
+    //     return curr;
+    // }, [])
+    console.log(errorList);
+    
     return (
         <ul className="error">
             {errorList}
