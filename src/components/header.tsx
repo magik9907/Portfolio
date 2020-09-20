@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React, { useState } from "react"
 import Nav from "./nav"
 import './header.scss'
 import Social from "./social"

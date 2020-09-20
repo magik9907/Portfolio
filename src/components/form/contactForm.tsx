@@ -1,44 +1,23 @@
-/*
-  const validationRules = {
-    email: {
-      notEmpty:{
-        message:"pole nie moze być puste"
-      },
-      isRegex:{
-      regex: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-      message:''
-    }
-    },
-    title: {
-      notEmpty:{
-        message:"pole nie moze być puste"
-      },
-    },
-    text: {
-      notEmpty:{
-        message:"pole nie moze być puste"
-      },
-    },
-    recaptcha: {
-      isChecked:{
-        message:'wymagane jest potwierdzenie'
-      }
-    },
-    honeypot: {
-      isEmpty:{
-        message:""
-      },
-    }
-  }
-
-  
-   */
-
 import React, { useState } from 'react'
 import RecaptchaAuth from './recaptchaAuth'
 import { ErrorList } from './errorList';
 
 import './contactForm.scss'
+
+// type PropType = {
+//   action?: string;
+//   method?: string
+// }
+
+// const ContactForm = (props :PropType)=>{
+
+// return (
+//   <>
+//   </>
+// )
+// }
+
+// export default ContactForm
 
 export interface IProp {
   action?: string;
@@ -248,18 +227,3 @@ export function ContactForm(props: IProp) {
   )
 }
 
-
-// type PropType = {
-//   action?: string;
-//   method?: string
-// }
-
-// const ContactForm = (props :PropType)=>{
-
-// return (
-//   <>
-//   </>
-// )
-// }
-
-// export default ContactForm

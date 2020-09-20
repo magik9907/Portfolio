@@ -1,22 +1,28 @@
 import React from "react"
+import { useTitle } from "../hooks/useTitle"
+import {useLanguageContext} from "../hooks/useLanguageContext"
 import Layout from "../components/layout"
 import List from "../components/list/list"
 import { ContactForm } from "../components/form/contactForm"
-import './index.scss'
 import Social from "../components/social"
-import { useTitle } from "../hooks/useTitle"
 import Skills from "../components/skills"
 
+import indexJson from '../data/index.json'
+import './index.scss'
+
 const IndexPage = () => {
+  const langContext = useLanguageContext()
   const title = useTitle()
+  const lang = langContext.lang;
+
   return (
-    <Layout title={"Strona Główna"}>
+    <Layout title={indexJson.title[lang]}>
       <div>
         <section id="prezentation" className="prezentation">
 
           <div className="title">
             <p className="fullName">Łukasz Milewski</p>
-            <p>{title}</p>
+            <p className="subtitle">{title}</p>
           </div>
 
           <div className="dev-cont">
@@ -30,22 +36,19 @@ const IndexPage = () => {
         </section>
 
         <section className="about" id="about">
-          <h3 className="question">Kim jestem?</h3>
-          <p>Człowiekiem lubiącym wyzwania i nie bojącym się pracy. Interesuje się JavaScriptem i piłką nożną.
-          Chętnym dalszego rozwoju i poszerzania więdzy nie tylko w zakresie JS ale również jego framework-ów
-    i NodeJS-a, oraz innych języków programowania.</p>
-          <p>Świadomy, że każdy popełnia błędy i może przed refactoryzacją stworzyć mało wydajny kod</p>
+          <h3 className="question">{indexJson.about.title[lang]}</h3>
+          {indexJson.about.content[lang].map((elem, index) => (<p key={index}>{elem}</p>))}
           <div className="technology">
-            <p>Technologie które wykorzystuję:</p>
+            <p>{indexJson.about.skillsTitle[lang]}</p>
             <div>
-              <Skills />
+              <Skills notSkills={['github']} />
             </div>
           </div>
         </section>
 
         <section className="projects" id="projects">
-          <p>Soon or look my <a href="https://github.com/magik9907" title="github" target="_blank"
-            rel="noreferrer noopener">github </a></p>
+          <p>{indexJson.projects[lang]} <a href="https://github.com/magik9907" title="github" target="_blank"
+            rel="noreferrer noopener">github <Skills skills={["github"]}></Skills></a></p>
         </section>
 
         <section className="contact" id="contact">

@@ -12,7 +12,6 @@
     label {
         color: $add-color;
         @extend %font-title;
-        font-size: 1.2em;
     }
 
     a {
@@ -21,7 +20,6 @@
 
     a,
     svg {
-        font-size: 1.3em;
         color: $font-bgc-main;
     }
 
@@ -32,8 +30,7 @@
 
     textarea,
     button,
-    input:not([TYPE=CHECKBOX]):not([TYPE=RADIO])
-    {
+    input:not([TYPE=CHECKBOX]):not([TYPE=RADIO]) {
         width: 100%;
         height: auto;
         background-color: $add-color4;
@@ -46,18 +43,20 @@
     textarea {
         height: 150px;
         resize: vertical;
-        line-height: 1.5em;
     }
 
     button {
         text-transform: uppercase;
-        font-size: 1.3em;
         cursor: pointer;
     }
 
     h3 {
-        font-size: 1.3em;
         color: $add-color4;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
     }
 
     .secure {
@@ -66,6 +65,7 @@
     }
 
     .input-row {
+        display: flex;
         padding: 0 10px;
         display: flex;
         flex-direction: column;
@@ -73,7 +73,8 @@
     }
 
     .recaptcha {
-        justify-content: center;
+        overflow-x: auto;
+        height: 85px;
 
         iframe {
             height: 78px;
@@ -82,9 +83,12 @@
 
     &::after {
         @include traingleBgc($bgc-add, $bgc-main);
-        display: block;
+        display: none;
         width: 100%;
         height: 100%;
+        border-top-width: 49vh;
+        border-bottom-width: 50vh;
+        border-right-width: 47vw;
     }
 
     .social {
@@ -102,9 +106,20 @@
             width: fit-content;
         }
     }
+}
 
+@media screen and(min-width:300px) {
+    .contact {
+        &::after {
+            display: block;
+        }
 
-
+        .recaptcha {
+            margin-left: initial;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
 }
 
 @media screen and(min-width:600px) {
@@ -116,22 +131,16 @@
             border-left-width: 48vw;
         }
 
-        h3 {
-            font-size: 1.8em;
-        }
 
         label {
-            font-size: 1.4em;
             white-space: nowrap;
             margin-right: 15px;
         }
 
-        input,
-        textarea,
-        button {
-            font-size: 1.4em;
-            line-height: 1.6em;
-        }
+        // input,
+        // textarea,
+        // button {
+        // }
 
         textarea {
             height: 250px;
@@ -146,6 +155,10 @@
             }
         }
 
+        .recaptcha {
+            justify-content: center;
+        }
+
     }
 }
 
@@ -153,18 +166,21 @@
 
 
     .contact {
-
-        &::after {
-            border-right-width: 49vw;
-            border-left-width: 49vw;
-        }
-
         width: 100%;
         min-height: 100%;
         display: flex;
         align-items: center;
         flex-direction: column;
         height: 100%;
+
+        form {
+            width: 75vw;
+        }
+
+        &::after {
+            border-right-width: 49vw;
+            border-left-width: 49vw;
+        }
 
         .wrap {
             display: grid;

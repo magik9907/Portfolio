@@ -1,14 +1,22 @@
 import React from "react"
 import Layout from "../components/layout"
+import Social from "../components/social"
+import { useLanguageContext } from "../hooks/useLanguageContext"
 
 import './success.scss'
-import Social from "../components/social"
 
 const Success = () => {
+    const langContext = useLanguageContext()
+
+    const messages = {
+        pl: "Wiadomość wysłana",
+        en: "Message send"
+    }
+
     return (
         <Layout title={"Sukces"}>
             <main>
-                <h4>Wiadomość wysłana</h4>
+                <h4>{messages[langContext.lang]}</h4>
             </main>
             <Social />
         </Layout>

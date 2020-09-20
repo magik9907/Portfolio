@@ -1,78 +1,54 @@
 @import '../style/style.scss';
 
 section {
+    min-height: 350px;
     padding: 10px;
     position: relative;
     z-index: 10;
 }
 
 .prezentation {
-    height: 100vh;
-
-    svg {
-        font-size: 1.6em;
-    }
-
-    .dev-cont,
-    svg {
-        color: $font-bgc-main;
-    }
+    color: $font-bgc-main;
 
     &::after {
         @include traingleBgc($bgc-main, $bgc-add);
+        display: none;
     }
 
     .title {
-        width: 50vw;
-        position: absolute;
-        top: 25vh;
+        // width: 50vw;
+        // position: absolute;
+        // top: 25vh;
         // transform: translateY(-50%);
-        font-size: 1.5em;
-        color: $font-bgc-main;
 
         .fullName {
             @extend %font-title;
             text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 5px;
         }
 
         p {
             @extend %font-paragraph;
             text-transform: uppercase;
-            margin-top: 10px;
             text-align: center;
-            margin-bottom: 0;
         }
     }
 
     .dev-cont {
         @extend %font-paragraph;
         width: auto;
-        position: absolute;
-        top: 50vh;
-        left: 60vw;
-        margin-right: 10px;
+        // position: absolute;
+        // top: 50vh;
+        // left: 60vw;
 
         ul {
-            padding: 0;
+            padding-left: 0;
             list-style: none;
-            margin-top: 0;
             text-align: center;
 
-            li {
-                margin-bottom: 10px;
-            }
-
-            h3 {
-                line-height: 1em;
-                margin: 0 0 5px;
-                font-weight: normal;
-            }
         }
     }
 
-    
+
 }
 
 .about {
@@ -83,7 +59,6 @@ section {
     .question {
         color: $add-color;
         font-weight: bold;
-        font-size: 1.3em;
         @extend %font-title;
     }
 
@@ -99,7 +74,6 @@ section {
         color: $font-bgc-add;
 
         p {
-            font-size: 1.2em;
             text-align: center;
             margin-top: 20px;
         }
@@ -130,9 +104,6 @@ section {
     background-color: $font-bgc-main;
     color: $font-bgc-add;
 
-    p {
-        font-size: 1.5em;
-    }
 
     a {
         @extend %font-paragraph;
@@ -145,84 +116,45 @@ section {
     }
 }
 
-@media screen and(max-height:520px) {
+@media screen and(min-height:350px) {
     .prezentation {
-        .title {
-            top: 10px;
-        }
-
-        .dev-cont {
-            top: 50vh;
-        }
-    }
-}
-
-@media screen and(max-width:300px) {
-    .prezentation {
-        height: auto;
 
         &::after {
-            display: none;
+            border-top-width: 50vh;
+            border-bottom-width: 50vh;
         }
 
-        .title,
-        .dev-cont {
-            transform: none;
-            position: unset;
-        }
-
-        .dev-cont {
-            margin-top: 20px;
-        }
     }
 }
+
+@media screen and(max-height:520px) {}
+
+@media screen and(min-width:300px) {
+    .prezentation {
+        height: 100vh;
+
+        &::after {
+            display: block;
+        }
+
+    }
+
+}
+
+
 
 
 @media screen and(min-width:600px) {
     .prezentation {
-
         &::after {
             border-right-width: 49vw;
             border-left-width: 48vw;
         }
-
-        svg {
-            font-size: 3em;
-        }
-
-        .dev-cont {
-            ul {
-                li {
-                    margin-bottom: 20px;
-                    font-size: 1.5em;
-                }
-            }
-        }
-
-        .title {
-            .fullName {
-                font-size: 2em;
-            }
-
-            p {
-                font-size: 1.7em;
-            }
-        }
     }
 
     .about {
-        .question {
-            font-size: 1.8em;
-        }
-
-        p {
-            font-size: 1.4em;
-        }
 
         .technology {
-            p {
-                font-size: 1.5em;
-            }
 
             div {
                 span {
@@ -235,7 +167,7 @@ section {
         }
     }
 
-  
+
 }
 
 @media screen and(min-width:900px) {

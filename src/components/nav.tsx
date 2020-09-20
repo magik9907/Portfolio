@@ -1,12 +1,12 @@
-import React, { useContext, useMemo } from "react"
+import React, { useMemo } from "react"
 import { Link } from "gatsby"
-import LanguageContext from '../context/languageContext'
+import {useLanguageContext} from '../hooks/useLanguageContext'
 import './nav.scss'
 import navL from '../data/nav.json'
 
 const Nav = () => {
 
-    const langContext = useContext(LanguageContext)
+    const langContext = useLanguageContext()
     const language = langContext.lang
     
     const links = useMemo(()=>{

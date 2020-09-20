@@ -1,46 +1,34 @@
-import React, { useContext, useMemo } from 'react'
-import LanguageContext from '../../context/languageContext'
+import React, { useMemo } from 'react'
 import './errorList.scss'
+import messages from '../../data/contactFormError.json'
+import {useLanguageContext} from '../../hooks/useLanguageContext'
 
 type propType = {
     feedback: Array<string>
 }
 
 export function ErrorList(props: propType) {
-    const langContext = useContext(LanguageContext)
+    const langContext = useLanguageContext()
 
     if (!props.feedback) return < ul className="error" />;
-    const lang = useMemo(()=>{
-        return langContext.lang
-    },[langContext.lang])
+
+    // const lang = useMemo(()=>{
+    //     return langContext.lang
+    // },[langContext.lang])
+
     const feedback = props.feedback
 
-    const messages = {
-        notEmpty: {
-            "pl": "Pole nie moze byc puste",
-            "en": "Input cannot be empty"
-        },
-        isRegexp: {
-            'pl': "Niepoprawny format",
-            "en": "Invalid format"
-        },
-        isChecked: {
-            'pl': "Pole jest wymagane",
-            "en": "The field is required"
-        },
-    }
+    const errorList = useMemo(() => {
+        return feedback.reduce((curr, next) => {
+            curr.push(<li key={next}>{messages[next][langContext.lang]}</li>);
+            return curr;
+        }, [])
+    }, [langContext.lang, feedback])
 
-    // const errorList = useMemo(() => {
-    //     return feedback.reduce((curr, next) => {
-    //         curr.push(<li key={next}>{messages[next][langContext.lang]}</li>);
-    //         return curr;
-    //     }, [])
-    // }, [langContext.lang, feedback])
-
-    const errorList = feedback.reduce((curr, next) => {
-        curr.push(<li key={next}>{messages[next][lang]}</li>);
-        return curr;
-    }, [])
+    // const errorList = feedback.reduce((curr, next) => {
+    //     curr.push(<li key={next}>{messages[next][lang]}</li>);
+    //     return curr;
+    // }, [])
 
     return (
         <ul className="error">

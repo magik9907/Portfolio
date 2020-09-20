@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Footer from './footer'
 import Header from './header'
 import SEO from './seo'
-import LanguageContext from '../context/languageContext'
+import {useLanguageContext} from '../hooks/useLanguageContext'
 
 const Layout = ({ children, ...props }) => {
-    const languageContext = useContext(LanguageContext)
+    const languageContext = useLanguageContext()
 
     return (
         <>

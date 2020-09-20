@@ -1,0 +1,14 @@
+{
+    "notEmpty": {
+        "pl": "Pole nie moze byc puste",
+        "en": "Input cannot be empty"
+    },
+    "isRegexp": {
+        "pl": "Niepoprawny format",
+        "en": "Invalid format"
+    },
+    "isChecked": {
+        "pl": "Pole jest wymagane",
+        "en": "The field is required"
+    }
+}

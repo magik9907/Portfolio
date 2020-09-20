@@ -1,15 +1,11 @@
-import React, { useContext } from 'react'
-import LanguageContext from '../context/languageContext';
-
-const title: { "pl": string, "en": string } = {
-    "pl": "developer z pasji",
-    "en": "passionate programmer"
-}
+import React from 'react'
+import title from '../data/title.json'
+import { useLanguageContext } from './useLanguageContext'
 
 const useTitle = () => {
-    const lang = useContext(LanguageContext);
+    const lang = useLanguageContext();
 
     return title[lang.lang]
 }
 
-export {useTitle}
+export { useTitle }
