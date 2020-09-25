@@ -29,9 +29,11 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "@hot-loader/react-dom": "^16.8.6",
     "babel-preset-gatsby": "^0.5.10",
     "eslint-plugin-react-hooks": "^4.1.2",
     "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.4.2",
     "prettier": "2.0.5"
   },
   "keywords": [
@@ -49,10 +51,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/magik9907/Portfolio"
   },
   "resolution": {
     "xstate": "4.9.1"

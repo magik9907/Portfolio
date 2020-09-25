@@ -10,11 +10,11 @@ const Nav = () => {
     const language = langContext.lang
     
     const links = useMemo(()=>{
-        return <ul>
+        return <>
             {navL.map( elem =>{
                 return <li key={elem.key} ><Link to={elem.link} >{elem.name[language]}</Link></li>
             })}
-        </ul>
+        </>
     },[navL, language])
 
     return (

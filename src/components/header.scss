@@ -83,7 +83,7 @@ header {
 }
 
 
-@media screen and(max-width:300px) {
+@media only screen and(max-width:300px) {
     header {
 
         &.closed {
@@ -114,7 +114,7 @@ header {
     }
 }
 
-@media screen and(min-width:600px) {
+@media only screen and(min-width:600px) {
     header {
         width: 400px;
 
@@ -125,4 +125,4 @@ header {
     }
 }
 
-@media screen and(min-width:600px) {}
+@media only screen and(min-width:600px) {}

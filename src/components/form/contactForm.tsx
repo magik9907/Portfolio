@@ -46,10 +46,10 @@ type TState = {
       isChecked: { value: Boolean; };
       feedback: Array<string>;
     };
-    rodo: {
-      isChecked: { value: Boolean; };
-      feedback: Array<string>;
-    };
+    // rodo: {
+    //   isChecked: { value: Boolean; };
+    //   feedback: Array<string>;
+    // };
     botField: {
       isEmpty: { value: Boolean; };
       feedback: Array<string>;
@@ -80,10 +80,10 @@ const initialState: TState = {
       feedback: [],
       isChecked: { value: false, }
     },
-    rodo: {
-      feedback: [],
-      isChecked: { value: false, }
-    },
+    // rodo: {
+    //   feedback: [],
+    //   isChecked: { value: false, }
+    // },
     botField: {
       feedback: [],
       isEmpty: { value: true, }
@@ -131,7 +131,7 @@ export function ContactForm(props: IProp) {
           case 'notEmpty':
             status = (TARGET.value !== '') ? true : false;
             break;
-}
+        }
 
         if (!status) {
           copyState.inputs[NAME]['feedback'].push(x);
@@ -208,16 +208,16 @@ export function ContactForm(props: IProp) {
         </div>
         <ErrorList key="feedback-text" feedback={state.inputs.text.feedback} />
       </div>
-      <div className="row">
+      {/* <div className="row">
         <ul>
           <li>
             <div className="input-row">
-              <input type="checkbox" name="rodo" id="contact-rodo" required onChange={onChangeValidation} /> <label htmlFor="contact-rodo">RODO</label>
+              <input type="checkbox" name="rodo" id="contact-rodo" required onChange={onChangeValidation} /> <label htmlFor="contact-rodo"><span ></span>Przetwarzanie danych</label>
             </div>
             <ErrorList key="feedback-rodo" feedback={state.inputs.rodo.feedback} />
           </li>
         </ul>
-      </div>
+      </div> */}
       <div className="row">
         <RecaptchaAuth onChange={onChangeValidation}></RecaptchaAuth>
         <ErrorList key="feedback-captcha" feedback={state.inputs.recaptcha.feedback} />

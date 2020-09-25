@@ -1,9 +1,13 @@
 @import '../../style/style.scss';
 
 .contact {
-    max-width: 100%;
     color: $font-bgc-main;
     padding: 10px;
+    @include font-size(1.2em);
+
+    .wrapper {
+        display: block
+    }
 
     h3 {
         @extend %font-title;
@@ -38,6 +42,7 @@
         @extend %font-paragraph;
         border-color: $add-color5;
         padding: 10px 15px;
+        outline: none;
     }
 
     textarea {
@@ -46,17 +51,23 @@
     }
 
     button {
+        @include font-size(1.2rem);
         text-transform: uppercase;
         cursor: pointer;
     }
 
     h3 {
+        @include font-size(1.2em);
         color: $add-color4;
     }
 
     ul {
         list-style: none;
         padding-left: 0;
+
+        .input-row {
+            flex-direction: row;
+        }
     }
 
     .secure {
@@ -67,14 +78,13 @@
     .input-row {
         display: flex;
         padding: 0 10px;
-        display: flex;
         flex-direction: column;
         margin-top: 15px;
     }
 
     .recaptcha {
         overflow-x: auto;
-        height: 85px;
+        height: 90px;
 
         iframe {
             height: 78px;
@@ -84,11 +94,10 @@
     &::after {
         @include traingleBgc($bgc-add, $bgc-main);
         display: none;
-        width: 100%;
-        height: 100%;
-        border-top-width: 49vh;
-        border-bottom-width: 50vh;
-        border-right-width: 47vw;
+        // border-width:50vh 50vw;
+        right: 0;
+        border-width: 400px calc(50vw - 0px) 400px calc(50vw - 16px);
+
     }
 
     .social {
@@ -105,11 +114,30 @@
         a {
             width: fit-content;
         }
+
+        .social-link {
+            margin-top: 10px;
+            height: 35px;
+        }
+
+    }
+}
+@media screen and(min-height:750px) {
+    .contact {
+        &::after {
+            border-top-width:50vh;
+            border-bottom-width: 50vh;
+        }
     }
 }
 
+
 @media screen and(min-width:300px) {
     .contact {
+        .subtitle {
+            margin-bottom: 0;
+        }
+
         &::after {
             display: block;
         }
@@ -126,21 +154,10 @@
 
     .contact {
 
-        &::after {
-            border-right-width: 49vw;
-            border-left-width: 48vw;
-        }
-
-
         label {
             white-space: nowrap;
             margin-right: 15px;
         }
-
-        // input,
-        // textarea,
-        // button {
-        // }
 
         textarea {
             height: 250px;
@@ -177,19 +194,10 @@
             width: 75vw;
         }
 
-        &::after {
-            border-right-width: 49vw;
-            border-left-width: 49vw;
-        }
-
         .wrap {
             display: grid;
             grid-template-columns: 1fr 1fr;
             column-gap: 20px;
-        }
-
-        &::after {
-            border-right-width: 50vw;
         }
     }
 }
