@@ -36,7 +36,8 @@
     button,
     input:not([TYPE=CHECKBOX]):not([TYPE=RADIO]) {
         width: 100%;
-        height: auto;
+        height: 50px;
+        border: 0;
         background-color: $add-color4;
         color: $font-bgc-main;
         @extend %font-paragraph;
@@ -47,7 +48,7 @@
 
     textarea {
         height: 150px;
-        resize: vertical;
+        resize: none;
     }
 
     button {
@@ -80,16 +81,30 @@
         padding: 0 10px;
         flex-direction: column;
         margin-top: 15px;
+
+        div {
+            width: 100%;
+            display: flex;
+        }
     }
 
     .recaptcha {
         overflow-x: auto;
-        height: 90px;
+        height: 120px;
+
+        div{
+            justify-content: center;
+        }
 
         iframe {
             height: 78px;
         }
+
+        .error {
+            margin: 0;
+        }
     }
+
 
     &::after {
         @include traingleBgc($bgc-add, $bgc-main);
@@ -122,10 +137,11 @@
 
     }
 }
+
 @media screen and(min-height:750px) {
     .contact {
         &::after {
-            border-top-width:50vh;
+            border-top-width: 50vh;
             border-bottom-width: 50vh;
         }
     }
@@ -174,6 +190,7 @@
 
         .recaptcha {
             justify-content: center;
+            flex-direction: column;
         }
 
     }

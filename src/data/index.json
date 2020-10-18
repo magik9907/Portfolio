@@ -26,5 +26,9 @@
     "projects": {
         "pl": "Wkrótce. Odwiedź mojego",
         "en": "Soon or look my"
+    },
+    "contactTitle": {
+        "pl": "Kontakt",
+        "en": "Contact"
     }
 }

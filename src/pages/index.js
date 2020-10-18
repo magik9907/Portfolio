@@ -52,7 +52,7 @@ const IndexPage = () => {
         </section>
 
         <section className="contact" id="contact">
-          <h3>Kontakt</h3>
+          <h3>{indexJson.contactTitle[lang]}</h3>
           <div>
             <ContactForm method="POST" action='/success'></ContactForm>
 

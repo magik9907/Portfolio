@@ -4,12 +4,24 @@
     @extend %font-paragraph;
     list-style-type: none;
     padding: 0;
-    color: #fff;
-    
+    color: #f00;
+    width: 100%;
+
     li {
-        padding:3px;
-        text-align: center;
-        margin-top:5px;
-        background-color: #f00;
+        padding: 3px;
+        padding-left: 50px;
+        // text-align: center;
+        margin-top: 5px;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 50px;
+            content: "X";
+            color: #f00;
+            transform: translate(-25px,-50%);
+        }
     }
 }
+

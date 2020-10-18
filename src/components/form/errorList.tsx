@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import './errorList.scss'
 import messages from '../../data/contactFormError.json'
-import {useLanguageContext} from '../../hooks/useLanguageContext'
+import { useLanguageContext } from '../../hooks/useLanguageContext'
 
 type propType = {
     feedback: Array<string>

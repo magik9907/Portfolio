@@ -1,0 +1,14 @@
+{
+    "text": {
+        "pl": "Wiadomość",
+        "en": "Message"
+    },
+    "title": {
+        "pl": "Tytuł",
+        "en": "Title"
+    },
+    "email": {
+        "pl": "E-mail",
+        "en": "E-mail"
+    }
+}
