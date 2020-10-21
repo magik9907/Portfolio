@@ -12,6 +12,7 @@ export default function RecaptchaAuth(props) {
     };
 
     function onChangeCaptcha(value) {
+        props.validationChecked(DATA.name, feedback.length == 0);
         onChange(!value)
     }
 
