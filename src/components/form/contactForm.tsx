@@ -3,7 +3,7 @@ import RecaptchaAuth from './recaptchaAuth'
 import './contactForm.scss'
 import NetlifyBotfield from './netlifyBotfield';
 import Input from './input';
-import Textarea from './textarea'; 
+import Textarea from './textarea';
 export interface IProp {
     action?: string;
     method?: string
@@ -60,7 +60,7 @@ export function ContactForm(props: IProp) {
         email: true,
         title: false,
         text: false,
-       recaptcha: false,
+        recaptcha: false,
         botField: true,
         valid: false,
     })
@@ -82,7 +82,6 @@ export function ContactForm(props: IProp) {
             }
         }
         copy.valid = test
-        console.log(isValid)
         setIsValid(copy);
     }
 

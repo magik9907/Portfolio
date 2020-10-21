@@ -33,15 +33,13 @@ function Language() {
         languageContext.changeLanguage(lang)
     }
 
-    const WINDOW = window.location.pathname;
-
     return (
         <div className="language">
             <div >
                 <Link
                     onClick={(e) => { onclick(e, 'pl') }}
                     hrefLang="pl"
-                    to={"/pl" + WINDOW}>
+                    to='/pl/'>
                     <Img fluid={query.pl.childImageSharp.fluid} title="polski" alt="polski" />
                 </Link>
             </div>
@@ -49,7 +47,7 @@ function Language() {
                 <Link
                     onClick={(e) => { onclick(e, 'en') }}
                     hrefLang="pl"
-                    to={"/en" + WINDOW}>
+                    to="/en/">
                     <Img fluid={query.en.childImageSharp.fluid} title="english" alt="english" />
                 </Link>
             </div>
