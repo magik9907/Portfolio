@@ -34,7 +34,7 @@ const formInputs = {
     recaptcha: {
         value: false,
         rules: { list: ['isChecked', 'required'] },
-        naem: 'recaptcha'
+        name: 'recaptcha'
     },
     botField: {
         value: '',
@@ -82,6 +82,8 @@ export function ContactForm(props: IProp) {
             }
         }
         copy.valid = test
+        console.log(copy);
+        
         setIsValid(copy);
     }
 

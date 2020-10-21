@@ -6,19 +6,20 @@ import { ErrorList } from './errorList';
 export default function RecaptchaAuth(props) {
     const DATA = props.data;
     const [value, feedback, onChange] = useInputValidate({ inputRules: DATA.rules, value: DATA.value });
+    const [isChecked, setIsChecked] = useState(false);
 
     var onLoadCallback = () => {
         alert("recaptcha is ready!");
     };
 
     function onChangeCaptcha(value) {
-        props.validationChecked(DATA.name, feedback.length == 0);
-        onChange(!value)
+        setIsChecked(!isChecked);
+        onChange(!value);
     }
 
     useEffect(() => {
-        props.validationChecked(DATA.name, feedback.length == 0);
-    }, [value, feedback])
+        props.validationChecked(DATA.name, isChecked);
+    }, [isChecked])
 
     return (
         <div className={(value) ? "checked recaptcha input-row " : " recaptcha input-row "}>
