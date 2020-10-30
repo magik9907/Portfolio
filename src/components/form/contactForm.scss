@@ -90,9 +90,9 @@
 
     .recaptcha {
         overflow-x: auto;
-        height: 120px;
+        overflow-y: hidden;
 
-        div{
+        div {
             justify-content: center;
         }
 

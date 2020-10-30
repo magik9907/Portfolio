@@ -5,17 +5,20 @@ import { useLanguageContext } from '../../hooks/useLanguageContext'
 // import { RULES } from './rules'
 import { useInputValidate } from '../../hooks/useInputValidate'
 
+//TODO: validation not work
+
 const Input = (props) => {
 
     const DATA = props.data;
-    const [value, feedback, onChange, onBlur] = useInputValidate({ inputRules: DATA.rules, value: DATA.value });
+    const [value, feedback, onChange, onBlur,status] = useInputValidate({ inputRules: DATA.rules, value: DATA.value });
+    
+    useEffect(() => {
+        props.validationChecked(DATA.name, status);
+    }, [status])
+
     const LANGCONTEXT = useLanguageContext();
     const LANGCONTENT = contactJson[DATA.name];
     var Status: { checked?: boolean, value?: string } = {};
-
-    useEffect(() => {
-        props.validationChecked(DATA.name, feedback.length == 0);
-    }, [feedback])
 
     if ((DATA.type === 'radio' || DATA.type === 'checkbox'))
         Status.checked = value

@@ -37,7 +37,7 @@ section {
             @extend %font-paragraph;
             text-transform: uppercase;
             text-align: center;
-            background: radial-gradient(transparent, $bgc-add);
+            background: radial-gradient($bgc-add, transparent);
             border: 2px solid $bgc-add;
             padding: 8px;
             border-radius: 10px;
@@ -219,7 +219,7 @@ section {
 
 }
 
-@media only screen and(min-width:900px) and (max-height:400px){
+@media only screen and(min-width:900px) and (max-height:400px) {
 
     .prezentation {
         .title {
@@ -233,25 +233,26 @@ section {
 }
 
 
-@media only screen and(min-width:900px) and (min-height:400px){
+@media only screen and(min-width:900px) and (min-height:400px) {
 
     .prezentation {
         .title {
             transform: unset;
-            top:17vh;
-            left:17vw;
+            top: 17vh;
+            left: 17vw;
         }
 
         .dev-cont {
-            top:calc(50vh - 20px);
-            left:60vw;
+            top: calc(50vh - 20px);
+            left: 60vw;
             transform: unset;
         }
     }
 }
 
-@media only screen  and (min-height:800px){
+@media only screen and (min-height:800px) {
 
     .prezentation {
-        font-size:2rem;
-    }}
+        font-size: 2rem;
+    }
+}

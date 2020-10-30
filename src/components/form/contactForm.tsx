@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import RecaptchaAuth from './recaptchaAuth'
 import './contactForm.scss'
 import NetlifyBotfield from './netlifyBotfield';
@@ -33,12 +33,12 @@ const formInputs = {
     },
     recaptcha: {
         value: false,
-        rules: { list: ['isChecked', 'required'] },
+        rules: { list: ['isChecked'] },
         name: 'recaptcha'
     },
     botField: {
         value: '',
-        rules: { list: ['isEmpty', 'required'] },
+        rules: { list: ['isEmpty'] },
         name: 'botField'
     }
 }
@@ -54,6 +54,9 @@ const buttonStyles = {
     },
 }
 
+//TODO: check validadation 
+
+
 export function ContactForm(props: IProp) {
 
     const [isValid, setIsValid] = useState({
@@ -61,58 +64,102 @@ export function ContactForm(props: IProp) {
         title: false,
         text: false,
         recaptcha: false,
-        botField: true,
-        valid: false,
+        botField: false,
+    })
+    const [formValid, setFormValid] = useState(false);
+
+    const [rendered, setRendered] = useState({
+        email: false,
+        title: false,
+        text: false,
+        recaptcha: false,
+        botField: false,
     })
 
-    const onSubmit = (event) => {
-        if (!isValid.valid)
-            event.preventDefault();
-    }
-
-    const validationChecked = (validRule, value) => {
-        let copy = { ...isValid };
-        copy[validRule] = value;
-
+    useEffect(() => {
+        console.log(isValid);
         let test = true;
-        for (let x in copy) {
-            if (!copy[x] && x != 'valid') {
+        for (let x in isValid) {
+            if (!isValid[x]) {
                 test = false;
                 break;
             }
         }
-        copy.valid = test
-        console.log(copy);
-        
-        setIsValid(copy);
+        setFormValid(test);
+    }, [isValid])
+
+
+    const onSubmit = (event) => {
+        if (!formValid)
+            event.preventDefault();
     }
 
+    const validationChecked = (validRule, value) => {
+
+        let copy = { ...isValid };
+        copy[validRule] = value;
+        console.log(validRule, copy);
+        //rendered next form element
+        setIsValid(copy);
+        let renderedcopy = { ...rendered }
+        renderedcopy[validRule] = true;
+        setRendered(renderedcopy)
+    }
+
+
+    //zmienna jest nadpisywana przez inna funkcje
+
     return (
-        <form action={props.action || ""} method={props.method || ""} id="contact-form" name="contact" data-netlify-recaptcha="true" data-netlify="true" noValidate netlify-honeypot="botField" onSubmit={onSubmit}>
-            <div className="secure">
-                <NetlifyBotfield
-                    data={formInputs.botField}
-                    validationChecked={validationChecked}
-                />
-            </div>
+        <form
+            action={props.action || ""}
+            method={props.method || ""}
+            id="contact-form"
+            name="contact"
+            data-netlify-recaptcha="true"
+            data-netlify="true"
+            noValidate
+            netlify-honeypot="botField"
+            onSubmit={onSubmit}>
             <div className="wrap">
                 <Input
                     data={formInputs.title}
                     validationChecked={validationChecked} />
-                <Input
-                    data={formInputs.email}
-                    validationChecked={validationChecked} />
+                {(rendered['title']) ?
+                    <Input
+                        data={formInputs.email}
+                        validationChecked={validationChecked} />
+                    :
+                    <span>loading...</span>
+                }
             </div>
-            <Textarea
-                data={formInputs.text}
-                validationChecked={validationChecked} />
-            <RecaptchaAuth
-                data={formInputs.recaptcha}
-                validationChecked={validationChecked} />
+            {rendered['email'] ?
+                <Textarea
+                    data={formInputs.text}
+                    validationChecked={validationChecked} />
+                :
+                <span>loading...</span>
+            }
+            {rendered['text'] ?
+                <RecaptchaAuth
+                    data={formInputs.recaptcha}
+                    validationChecked={validationChecked} />
+                :
+                <span>loading...</span>
+            }
+            <div className="secure">
+                {rendered['recaptcha'] ?
+                    <NetlifyBotfield
+                        data={formInputs.botField}
+                        validationChecked={validationChecked}
+                    />
+                    :
+                    <span>loading...</span>
+                }
+            </div>
             <div className="input-row">
                 <button
-                    type={(isValid.valid) ? "submit" : "button"}
-                    style={buttonStyles[(isValid.valid) ? 'active' : 'inActive']}
+                    type={(formValid) ? "submit" : "button"}
+                    style={buttonStyles[(formValid) ? 'active' : 'inActive']}
                 >Wyślij</button>
             </div>
         </form >

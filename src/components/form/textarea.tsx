@@ -6,14 +6,14 @@ import { useInputValidate } from '../../hooks/useInputValidate';
 const Textarea = (props) => {
     const DATA = props.data
 
-
-    const [value, feedback, onChange, onBlur] = useInputValidate({ inputRules: DATA.rules, value: DATA.value });
-    const langContext = useLanguageContext();
-    const langContent = contactJson[DATA.name];
+    const [value, feedback, onChange, onBlur, status] = useInputValidate({ inputRules: DATA.rules, value: DATA.value });
 
     useEffect(() => {
-        props.validationChecked(DATA.name, feedback.length == 0);
-    }, [value, feedback])
+        props.validationChecked(DATA.name, status);
+    }, [status])
+
+    const langContext = useLanguageContext();
+    const langContent = contactJson[DATA.name];
 
     const isRequired = (DATA.rules.list.indexOf('required') != -1) ? true : false;
 

@@ -1,28 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
-import { useInputValidate } from '../../hooks/useInputValidate';
 import { ErrorList } from './errorList';
 
 export default function RecaptchaAuth(props) {
     const DATA = props.data;
-    const [value, feedback, onChange] = useInputValidate({ inputRules: DATA.rules, value: DATA.value });
+    const rules = DATA.rules.list;
+    const [feedback, setFeedback] = useState([])
     const [isChecked, setIsChecked] = useState(false);
+
+    useEffect(() => {
+        props.validationChecked(DATA.name, isChecked );
+    }, [isChecked])
 
     var onLoadCallback = () => {
         alert("recaptcha is ready!");
     };
 
     function onChangeCaptcha(value) {
-        setIsChecked(!isChecked);
-        onChange(!value);
+        let bool :boolean;
+        if(value == null)
+            bool = false;
+        else 
+            bool = true;
+        setIsChecked(bool);
+        setFeedback((bool)?[]:rules);
     }
 
-    useEffect(() => {
-        props.validationChecked(DATA.name, isChecked);
-    }, [isChecked])
 
     return (
-        <div className={(value) ? "checked recaptcha input-row " : " recaptcha input-row "}>
+        <div className={(isChecked) ? "checked recaptcha input-row " : " recaptcha input-row "}>
             <div>
                 <ReCAPTCHA
                     sitekey="6LcIG8IZAAAAAHYcJXDxiEEYVN9MF6Sft25RMAL5"
@@ -31,5 +37,5 @@ export default function RecaptchaAuth(props) {
             </div>
             <ErrorList key="feedback-text" feedback={feedback} />
         </div>
-        )
+    )
 }
