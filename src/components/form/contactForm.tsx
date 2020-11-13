@@ -77,7 +77,6 @@ export function ContactForm(props: IProp) {
     })
 
     useEffect(() => {
-        console.log(isValid);
         let test = true;
         for (let x in isValid) {
             if (!isValid[x]) {
@@ -98,7 +97,6 @@ export function ContactForm(props: IProp) {
 
         let copy = { ...isValid };
         copy[validRule] = value;
-        console.log(validRule, copy);
         //rendered next form element
         setIsValid(copy);
         let renderedcopy = { ...rendered }

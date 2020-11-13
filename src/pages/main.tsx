@@ -1,6 +1,6 @@
 import React from "react"
 import { useTitle } from "../hooks/useTitle"
-import {useLanguageContext} from "../hooks/useLanguageContext"
+import { useLanguageContext } from "../hooks/useLanguageContext"
 import Layout from "../components/layout"
 import List from "../components/list/list"
 import { ContactForm } from "../components/form/contactForm"
@@ -10,11 +10,15 @@ import Skills from "../components/skills"
 import indexJson from '../data/index.json'
 import './index.scss'
 
-const IndexPage = () => {
+type propsType = {
+  lang?: string
+}
+
+const Main = (props: propsType) => {
   const langContext = useLanguageContext()
   const title = useTitle()
   const lang = langContext.lang;
-
+  
   return (
     <Layout title={indexJson.title[lang]}>
       <div>
@@ -67,4 +71,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default Main

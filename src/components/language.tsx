@@ -29,8 +29,7 @@ function Language() {
     const languageContext = useLanguageContext()
 
     const onclick = (event, lang: string) => {
-        event.preventDefault();
-        languageContext.changeLanguage(lang)
+//        languageContext.changeLanguage(lang)
     }
 
     return (

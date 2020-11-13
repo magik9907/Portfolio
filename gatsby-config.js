@@ -30,8 +30,8 @@ module.exports = {
             description: `Łukasz Milewski developer tworzący w JavaScript-cie i ReactJS.`,
           },
         ],
-        'icon': 'src/icons/favicon-32x32.png',
-        "icons": [
+        icon: 'src/icons/favicon-32x32.png',
+        icons: [
           {
             "src": "/android-chrome-192x192.png",
             "sizes": "192x192",
@@ -63,7 +63,7 @@ module.exports = {
     'gatsby-plugin-sass',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    `gatsby-plugin-offline`,
+    // `gatsby-plugin-offline`,
     'gatsby-plugin-fontawesome-css',
   ],
 }
