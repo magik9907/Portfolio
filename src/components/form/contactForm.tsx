@@ -7,7 +7,7 @@ export function ContactForm() {
     const useLangContext = useLanguageContext();
 
     return (
-        <iframe src={"http://localhost:10000/"+useLangContext.lang+'/'}  className="contact" />
+        <iframe src={"https://lukaszmilewski.netlify.app/"+useLangContext.lang+'/'}  className="contact" />
     )
 }
 
