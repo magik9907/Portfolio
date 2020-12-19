@@ -5,16 +5,24 @@
     padding: 10px;
     @include font-size(1.2em);
 
+    .contact-iframe {
+        text-align: center;
+    }
+
+    iframe {
+        outline: none;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        height: 610px;
+        width: 90vw;
+    }
+
     .wrapper {
         display: block
     }
 
     h3 {
-        @extend %font-title;
-    }
-
-    label {
-        color: $add-color;
         @extend %font-title;
     }
 
@@ -32,79 +40,10 @@
         height: 40px !important;
     }
 
-    textarea,
-    button,
-    input:not([TYPE=CHECKBOX]):not([TYPE=RADIO]) {
-        width: 100%;
-        height: 50px;
-        border: 0;
-        background-color: $add-color4;
-        color: $font-bgc-main;
-        @extend %font-paragraph;
-        border-color: $add-color5;
-        padding: 10px 15px;
-        outline: none;
-    }
-
-    textarea {
-        height: 150px;
-        resize: none;
-    }
-
-    button {
-        @include font-size(1.2rem);
-        text-transform: uppercase;
-        cursor: pointer;
-    }
-
     h3 {
         @include font-size(1.2em);
         color: $add-color4;
     }
-
-    ul {
-        list-style: none;
-        padding-left: 0;
-
-        .input-row {
-            flex-direction: row;
-        }
-    }
-
-    .secure {
-        visibility: hidden;
-        height: 0px;
-    }
-
-    .input-row {
-        display: flex;
-        padding: 0 10px;
-        flex-direction: column;
-        margin-top: 15px;
-
-        div {
-            width: 100%;
-            display: flex;
-        }
-    }
-
-    .recaptcha {
-        overflow-x: auto;
-        overflow-y: hidden;
-
-        div {
-            justify-content: center;
-        }
-
-        iframe {
-            height: 78px;
-        }
-
-        .error {
-            margin: 0;
-        }
-    }
-
 
     &::after {
         @include traingleBgc($bgc-add, $bgc-main);
@@ -112,7 +51,6 @@
         // border-width:50vh 50vw;
         right: 0;
         border-width: 400px calc(50vw - 0px) 400px calc(50vw - 16px);
-
     }
 
     .social {
@@ -138,21 +76,10 @@
     }
 }
 
-@media screen and(min-height:750px) {
-    .contact {
-        &::after {
-            border-top-width: 50vh;
-            border-bottom-width: 50vh;
-        }
-    }
-}
 
 
 @media screen and(min-width:300px) {
     .contact {
-        .subtitle {
-            margin-bottom: 0;
-        }
 
         &::after {
             display: block;
@@ -166,38 +93,16 @@
     }
 }
 
-@media screen and(min-width:600px) {
-
+@media screen and(min-height:750px) {
     .contact {
-
-        label {
-            white-space: nowrap;
-            margin-right: 15px;
+        &::after {
+            border-top-width: 50vh;
+            border-bottom-width: 50vh;
         }
-
-        textarea {
-            height: 250px;
-        }
-
-        .input-row {
-            align-items: center;
-            flex-direction: row;
-
-            &.textarea {
-                flex-direction: column;
-            }
-        }
-
-        .recaptcha {
-            justify-content: center;
-            flex-direction: column;
-        }
-
     }
 }
 
 @media screen and(min-width:900px) {
-
 
     .contact {
         width: 100%;
@@ -207,9 +112,7 @@
         flex-direction: column;
         height: 100%;
 
-        form {
-            width: 75vw;
-        }
+
 
         .wrap {
             display: grid;

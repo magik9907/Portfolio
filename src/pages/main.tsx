@@ -18,7 +18,7 @@ const Main = (props: propsType) => {
   const langContext = useLanguageContext()
   const title = useTitle()
   const lang = langContext.lang;
-  
+
   return (
     <Layout title={indexJson.title[lang]}>
       <div>
@@ -57,8 +57,8 @@ const Main = (props: propsType) => {
 
         <section className="contact" id="contact">
           <h3>{indexJson.contactTitle[lang]}</h3>
-          <div>
-            <ContactForm method="POST" action='/success'></ContactForm>
+          <div className="contact-iframe">
+            <ContactForm></ContactForm>
 
           </div>
           <div className="social">
