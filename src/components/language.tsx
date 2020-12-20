@@ -28,25 +28,21 @@ function Language() {
     if (!query) return (<div />)
     const languageContext = useLanguageContext()
 
-    const onclick = (event, lang: string) => {
-//        languageContext.changeLanguage(lang)
-    }
-
+    let  url = typeof window !== 'undefined' ? window.location.href : '';
+    let urlAn= url.split('/').pop();
     return (
         <div className="language">
             <div >
                 <Link
-                    onClick={(e) => { onclick(e, 'pl') }}
                     hrefLang="pl"
-                    to='/pl/'>
+                    to={'/pl/'+urlAn}>
                     <Img fluid={query.pl.childImageSharp.fluid} title="polski" alt="polski" />
                 </Link>
             </div>
             <div >
                 <Link
-                    onClick={(e) => { onclick(e, 'en') }}
-                    hrefLang="pl"
-                    to="/en/">
+                    hrefLang="pen"
+                    to={'/en/'+urlAn}>
                     <Img fluid={query.en.childImageSharp.fluid} title="english" alt="english" />
                 </Link>
             </div>

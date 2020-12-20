@@ -250,9 +250,13 @@ section {
     }
 }
 
-@media only screen and (min-height:800px) {
+@media only screen and (min-width:800px) and (min-height:800px) {
 
     .prezentation {
-        font-size: 2rem;
+
+        .title,
+        .dev-cont {
+            @include font-size(2rem);
+        }
     }
 }

@@ -8,7 +8,7 @@ import Social from "../components/social"
 const NotFoundPage = (props) => (
 
   <Layout title="404">
-    <main>
+    <main className="e404">
       <h3>Page not found: 404</h3>
       <Link to="/">Strona Główna / Homepage</Link>
       <Social></Social>
