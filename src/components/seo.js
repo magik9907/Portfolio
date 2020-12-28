@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, withPrefix } from "gatsby"
 import '../style/index.scss'
 
 
@@ -83,6 +83,7 @@ function SEO({ description, lang, meta, title }) {
       <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
         async defer />
       <meta name="google-site-verification" content="bUcwWxe4rtE-YqDyemR9T-YA4VKQ9X2Kkh8mPuJinaE" />
+      <script src={withPrefix('script.js')} type="text/javascript" />
     </Helmet >
   )
 }

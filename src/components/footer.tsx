@@ -5,9 +5,13 @@ export default function Footer() {
 
     const date = new Date();
     return (
-        <footer >
-            <p>&copy; {date.getFullYear()} Łukasz Milewski</p>
-        </footer >
+        <>
+            <footer >
+                <p>&copy; {date.getFullYear()} Łukasz Milewski</p>
+            </footer >
+        </>
     );
+
+
 }
 
