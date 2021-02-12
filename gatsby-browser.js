@@ -1,12 +1,17 @@
 import React from "react"
+import Layout from "./src/components/layout"
 import { LanguageProvider } from "./src/context/languageContext"
 
-export const wrapRootElement = ({ element }) => (
-    <LanguageProvider>{element}</LanguageProvider>
-)
+export const wrapRootElement = ({ element }) => {
 
-export const onServiceWorkerUpdateReady = () => window.location.reload();
-
+    return (
+        <LanguageProvider>
+            <Layout>
+                {element}
+            </Layout>
+        </LanguageProvider>
+    )
+}
 
 /**
  * Implement Gatsby's Browser APIs in this file.

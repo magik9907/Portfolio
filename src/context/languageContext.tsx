@@ -4,7 +4,6 @@ const defaultLanguage = {
     lang: 'en',
     changeLanguage: (language) => { },
 }
-
 interface ILanguageContext {
     lang: string,
     changeLanguage: (language: String) => void,

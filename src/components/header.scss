@@ -1,134 +1,27 @@
 @import '../style/style.scss';
 
-header {
-    width: 75%;
-    height: 100vh;
+header{
+    background:linear-gradient($bgc-main 10%, $add-color2 90%, $bgc-add);
     padding: 10px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 100;
-    border-left: 3px solid $add-color4;
-    background-color: $bgc-main;
-    color: $font-bgc-main;
-    transition: right 1s;
 
-    a {
-        display: inline-block;
+    .title{
+        display: flex;
         color: $font-bgc-main;
-        width: 100%;
-        height: 100%;
-        word-wrap: break-word;
-    }
+        @include font-size(1.5rem);
 
-    h2 {
-        @include font-size(1.4em);
-        @extend %font-title;
-        color: $add-color4;
-        text-align: center;
-        margin: 10px 0 0;
-
-        span {
-        @include font-size(0.8em);
-            color:$font-bgc-main;
-            font-weight: bold;
-            text-transform: uppercase;
+        h2{    
             text-align: center;
-            margin: 10px 0 0;
-        }
-    }
-    
-    &.closed {
-        right: -75%;
-
-        .menu-burger {
-
-            .burger {
-                top: 15px;
-                transform: rotateZ(0deg);
-
-                &::after {
-                    transform: rotateZ(0deg);
-                    top: 15px;
-                }
-
+            width: 100%;
+            margin: 00 0 15px; 
+            span{
+                font-style: italic;
+                font-variant: small-caps;
             }
         }
     }
 
-    .wrapper {
-        height: 100%;
-        padding-bottom: 20px;
-        overflow-y: auto;
-    }
-
-    .menu-burger {
-        box-sizing: content-box;
-        width: 50px;
-        height: 50px;
-        border: 3px solid $add-color4;
-        position: absolute;
-        left: -59px;
-        top: 20px;
-        background-color: $bgc-add;
-
-        .burger {
-            @include burger($font-bgc-add, 23px, 5px, 40px, 5px, -45deg);
-
-            &::after {
-                content: '';
-                @include burger($font-bgc-add, 0px, 0px, 100%, 100%, 90deg);
-            }
-        }
-    }
-
-}
-
-
-@media only screen and(max-width:300px) {
-    header {
-
-        &.closed {
-            .menu-burger {
-
-                .burger {
-                    top: 10px;
-
-                    &::after {
-                        top: 8px;
-                    }
-                }
-            }
-        }
-
-        .menu-burger {
-            width: 30px;
-            height: 30px;
-            border-width: 2px;
-            left: -37px;
-
-            .burger {
-                width: 20px;
-                height: 3px;
-                top: 14px;
-            }
-        }
+    .social-link{
+        display: flex;
+        justify-content: space-evenly;
     }
 }
-
-@media only screen and(min-width:600px) {
-    header {
-        width: 400px;
-
-        h2{
-            @include font-size(1.7rem);
-        }
-
-        &.closed {
-            right: -400px;
-        }
-
-    }
-}
-
-@media only screen and(min-width:600px) {}

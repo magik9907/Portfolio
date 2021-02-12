@@ -27,27 +27,39 @@ function Language() {
 
     if (!query) return (<div />)
     const languageContext = useLanguageContext()
+    let state = languageContext.lang
+    const onClick = (event) => {
+        event.preventDefault();
+        let lang = event.currentTarget.hreflang
+        state = lang;
+        languageContext.changeLanguage(lang);
+    }
 
-    let  url = typeof window !== 'undefined' ? window.location.href : '';
-    let urlAn= url.split('/').pop();
-    return (
-        <div className="language">
-            <div >
+    let url = typeof window !== 'undefined' ? window.location.pathname : '';
+    let urlAn = url;
+
+    return (<>
+        <div className="language" >
+            <div className={(state != 'pl') ? 'active' : ''} >
                 <Link
                     hrefLang="pl"
-                    to={'/pl/'+urlAn}>
+                    to={urlAn}
+                    onClick={onClick}
+                >
                     <Img fluid={query.pl.childImageSharp.fluid} title="polski" alt="polski" />
                 </Link>
             </div>
-            <div >
+            <div className={(state != 'en') ? 'active' : ''}>
                 <Link
-                    hrefLang="pen"
-                    to={'/en/'+urlAn}>
+                    hrefLang="en"
+                    to={urlAn}
+                    onClick={onClick}
+                >
                     <Img fluid={query.en.childImageSharp.fluid} title="english" alt="english" />
                 </Link>
             </div>
         </div >
-    )
+    </>)
 }
 
 export default Language

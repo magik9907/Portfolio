@@ -4,8 +4,18 @@ module.exports = {
     description: `Łukasz Milewski - developer of JavaScript and ReactJS.`,
     author: `Łukasz Milewski`,
     keywords: 'Łukasz Milewski, front-end developer, JavaScript Developer, ReactJS Developer',
+    siteUrl: `https://magik9907.github.io`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://magik9907.github.io',
+        sitemap: 'https://magik9907.github.io/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
+    `gatsby-plugin-sitemap`,
     `gatsby-transformer-sharp`,
     'gatsby-image',
     `gatsby-plugin-sharp`,
@@ -59,11 +69,22 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
-    }, 
+    },
     'gatsby-plugin-sass',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     'gatsby-plugin-fontawesome-css',
+    {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        // your google analytics tracking id
+        trackingId: `G-386RDR99LQ`,
+        // Puts tracking script in the head instead of the body
+        head: true,
+        // enable ip anonymization
+        anonymize: true,
+      },
+    },
   ],
 }

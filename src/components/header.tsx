@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import Nav from "./nav"
 import './header.scss'
 import Social from "./social"
@@ -6,23 +6,20 @@ import Language from "./language"
 import { useTitle } from "../hooks/useTitle"
 
 
-function Header() {
-    const [isClosed, setIsClosed] = useState(true)
+type propType = {
+}
+
+function Header(props: propType) {
     const title = useTitle()
 
     return (
-        <header className={(isClosed) ? "closed" : ""} >
-            <div className="menu-burger" onClick={() => setIsClosed(!isClosed)}>
-                <span className="burger"></span>
+        <header>
+            <div className="title">
+                <h2>Łukasz Milewski<br /> <span>{title}</span></h2>
             </div>
-            <div className="wrapper">
-                <div className="title">
-                    <h2>Łukasz Milewski<br /> <span>{title}</span></h2>
-                </div>
-                <Nav />
-                <Social></Social>
-                <Language></Language>
-            </div>
+            <Nav type="drag" />
+            <Social></Social>
+            <Language></Language>
         </header >
     )
 }

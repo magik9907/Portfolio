@@ -1,15 +1,18 @@
 @import '../style/style';
 
-.language {
-    background-color: $bgc-add;
-    padding: 10px;
-    border-radius: 150px;
+.language{
+    margin-bottom: 30px;
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 10px;
+    justify-content: center;
+    
+    a {
+        position: relative;
+        z-index: 10;
+        display: inline-block;
+        width:40px;
+    }
 
-    &>div {
-        width: 50px;
-        cursor: pointer;
+    .active{
+        filter:sepia(1);
     }
 }

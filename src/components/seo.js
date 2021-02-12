@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql, withPrefix } from "gatsby"
+import { useStaticQuery, graphql} from "gatsby"
 import '../style/index.scss'
 
 
@@ -27,9 +27,7 @@ function SEO({ description, lang, meta, title }) {
       }
     `
   )
-
   const metaDescription = description || site.siteMetadata.description
-
   return (
     <Helmet
       htmlAttributes={{
@@ -79,9 +77,7 @@ function SEO({ description, lang, meta, title }) {
       <link rel="icon" href={'favicon.ico'} />
       {/* fonts family  */}
       <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Sriracha&display=swap" rel="stylesheet" />
-
-      <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-        async defer />
+     
     </Helmet >
   )
 }
