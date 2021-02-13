@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react"
+import React, { Dispatch, useEffect, useMemo, useState } from "react"
 import { Link } from "gatsby"
 import { useLanguageContext } from '../hooks/useLanguageContext'
 import './nav.scss'
@@ -7,6 +7,10 @@ import { navigate } from '@reach/router';
 
 type propTypes = {
     type: string,
+    title?: {
+        title: string,
+        setTitle: Dispatch<any>
+    }
 }
 
 const Nav = (prop: propTypes) => {
@@ -29,7 +33,10 @@ const Nav = (prop: propTypes) => {
                 currSite = event.target;
                 currSite.draggable = true;
                 currSite.classList.add('drag');
-                setTitle(currSite.firstChild.innerText)
+                let t = currSite.firstChild.innerText;
+                setTitle(t)
+                let split = prop.title.title.split('-')
+                prop.title.setTitle(t.concat('-', (!split[1]) ? split[0] : split[1]))
                 navigate(currSite.children[0].pathname)
             }
             event.dataTransfer.clearData();
@@ -75,7 +82,6 @@ const Nav = (prop: propTypes) => {
             onDragOver: onDragOver
         }
 
-
         links = useMemo(() => {
             return < ul className="nav nav-dragdrop" >
                 {navL.map(elem => {
@@ -92,12 +98,16 @@ const Nav = (prop: propTypes) => {
                 })}
                 {(type == 'drag') ? <li className="drag" draggable="true" >{title}</li> : ''}
             </ul>
-        }, [title, language])
+        }, [title, language, prop.title.title])
+
     } else {
+
         const onClick = (event) => {
             event.preventDefault()
             const target = event.currentTarget;
             setTitle(target.innerText)
+            let split = prop.title.title.split('-')
+            prop.title.setTitle(target.innerText.concat('-', (!split[1]) ? split[0] : split[1]))
             navigate(target.pathname);
         }
 
@@ -115,7 +125,7 @@ const Nav = (prop: propTypes) => {
                     </li>
                 })}
             </ul>
-        }, [title, language])
+        }, [title, language, prop.title.title])
     }
     return (
         <nav >

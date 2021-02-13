@@ -1,1 +1,10 @@
-@import '../style/style.scss';
+@import "../style/style.scss";
+footer {
+    background: linear-gradient($bgc-add, $add-color2 15%, $bgc-main  );
+    padding: 52px 10px 10px;
+
+    p{
+        text-align: center;
+        color: $font-bgc-main;
+    }
+}

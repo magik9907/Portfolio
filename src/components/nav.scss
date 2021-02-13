@@ -1,11 +1,18 @@
 @import "../style/style.scss";
 
+footer{
+
+    a{
+        @include font-size(0.8rem);
+    }
+}
+
 .nav {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
-justify-content: space-between;
+    justify-content: space-between;
     li {
         flex-basis: 49%;
         width: 100%;
@@ -14,6 +21,7 @@ justify-content: space-between;
         text-transform: uppercase;
         margin-top: 10px;
         user-select: none;
+        transition: background-color 0.2s,border-color 0.2s;
 
         a {
             padding: 10px;
@@ -37,7 +45,7 @@ justify-content: space-between;
                 cursor: grabbing;
             }
 
-            &:last-child{
+            &:last-child {
                 padding: 10px;
             }
         }
@@ -59,10 +67,7 @@ justify-content: space-between;
                 border: 3px solid $bgc-add;
                 border-radius: 10px;
             }
-
         }
-
-        
     }
 
     &.nav-list {
@@ -80,6 +85,17 @@ justify-content: space-between;
             &.active {
                 background-color: transparentize($font-bgc-main, 0.8);
             }
+        }
+    }
+}
+
+
+@media screen and (max-width:300px){
+    .nav {
+        justify-content: center;
+
+        li{
+            flex-basis: 100%;
         }
     }
 }

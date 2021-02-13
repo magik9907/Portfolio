@@ -7,6 +7,10 @@ import { useTitle } from "../hooks/useTitle"
 
 
 type propType = {
+    title?: {
+        title: string,
+        setTitle
+    }
 }
 
 function Header(props: propType) {
@@ -17,7 +21,7 @@ function Header(props: propType) {
             <div className="title">
                 <h2>Łukasz Milewski<br /> <span>{title}</span></h2>
             </div>
-            <Nav type="drag" />
+            <Nav type="drag" title={props.title}/>
             <Social></Social>
             <Language></Language>
         </header >
