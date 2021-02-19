@@ -12,7 +12,7 @@
             "pl": "O mnie",
             "en": "About"
         },
-        "link": "/about",
+        "link": "/about/",
         "key": "about"
     },
     {
@@ -20,7 +20,7 @@
             "pl": "Projekty",
             "en": "Projects"
         },
-        "link": "/projects",
+        "link": "/projects/",
         "key": "projects"
     },
     {
@@ -28,7 +28,7 @@
             "pl": "Kontakt",
             "en": "Contact"
         },
-        "link": "/contact",
+        "link": "/contact/",
         "key": "contact"
     }
 ]

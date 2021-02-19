@@ -1,5 +1,4 @@
-@import './style';
-
+@import "./style";
 
 *,
 *:before,
@@ -51,6 +50,11 @@ html {
 body {
     // overflow-x: hidden;
     background-color: $bgc-add;
+
+    section {
+        margin: 20px 0;
+        padding: 10px;
+    }
 }
 
 i {
@@ -60,4 +64,3 @@ i {
 .display-none {
     display: none;
 }
-

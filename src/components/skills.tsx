@@ -32,6 +32,7 @@ const gatsbySVG = {
 
 
 type propsType = {
+    className?: string,
     skills?: Array<string>,
     notSkills?: Array<string>,
 }
@@ -44,25 +45,39 @@ const skillsList = {
     html: faHtml5,
     git: faGitAlt,
     github: faGithub,
-    gatsby: gatsbySVG
+    gatsby: gatsbySVG,
+    csharp: 'csharpIMG',
+    sql: 'sqlIMG'
 }
 
-const notAwesome = ['gatsby']
+const notAwesome = ['gatsby', 'csharp', 'sql']
 
 const Skills = (props: propsType) => {
 
     const newSkills = (props.skills) ? props.skills : Object.keys(skillsList);
     const skills = (!props.notSkills) ? newSkills : newSkills.filter(element => !props.notSkills.includes(element))
     const list = skills.map(key => {
-        return (notAwesome.indexOf(key) != -1) ?
-            (<span key={key} className={key}><svg {...skillsList[key]['attr']}><path {...skillsList[key].cont['path']}></path></svg></span>) :
-            (<span key={key} className={key}><FontAwesomeIcon icon={skillsList[key]} /></span>)
+        if (notAwesome.indexOf(key) != -1) {
+            if (typeof skillsList[key] == 'string') {
+                let title = key.replace(/(IMG)$/, '');
+                return (<span key={key} className={key.concat(' skill-style image')}>
+                    <img src={'/icons/'.concat(title, '.png')} title={title} alt={title}></img>
+                </span>)
+            } else
+                <svg {...skillsList[key]['attr']}>
+                    <path {...skillsList[key].cont['path']}></path>
+                </svg>
+
+        } else
+            return (<span key={key} className={key.concat(' skill-style')}>
+                <FontAwesomeIcon icon={skillsList[key]} />
+            </span>)
     })
 
     return (
-        <>
+        <div className={"skills ".concat(props.className)}>
             {list}
-        </>
+        </div>
     )
 }
 

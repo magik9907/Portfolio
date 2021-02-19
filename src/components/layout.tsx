@@ -8,13 +8,14 @@ import { useTitle } from '../hooks/useTitle'
 const Layout = ({ children, ...props }) => {
     const languageContext = useLanguageContext()
     const title = useTitle();
-    const [fullTitle,setFullTitle] = useState(title);
+    const [subTitle, setSubTitle] = useState('');
+
     return (
         <>
-            <SEO title={fullTitle} lang={languageContext.lang}></SEO>
-            <Header title={{title:fullTitle,setTitle:setFullTitle}} ></Header>
+            <SEO title={subTitle + title} lang={languageContext.lang}></SEO>
+            <Header title={{ title: subTitle, setTitle: setSubTitle }} ></Header>
             <main>{children}</main>
-            <Footer title={{title:fullTitle,setTitle:setFullTitle}}></Footer>
+            <Footer title={{ title: subTitle, setTitle: setSubTitle }}></Footer>
         </>
     )
 }

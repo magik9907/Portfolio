@@ -1,15 +1,17 @@
 import React from "react"
 import Layout from "./src/components/layout"
 import { LanguageProvider } from "./src/context/languageContext"
-
+import { LocationProvider } from "@reach/router"
 export const wrapRootElement = ({ element }) => {
 
     return (
-        <LanguageProvider>
-            <Layout>
-                {element}
-            </Layout>
-        </LanguageProvider>
+        <LocationProvider>
+            <LanguageProvider>
+                <Layout>
+                    {element}
+                </Layout>
+            </LanguageProvider>
+        </LocationProvider>
     )
 }
 

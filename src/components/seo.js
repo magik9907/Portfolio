@@ -75,8 +75,6 @@ function SEO({ description, lang, meta, title }) {
       ].concat(meta)}
     >
       <link rel="icon" href={'favicon.ico'} />
-      {/* fonts family  */}
-      <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Sriracha&display=swap" rel="stylesheet" />
      
     </Helmet >
   )

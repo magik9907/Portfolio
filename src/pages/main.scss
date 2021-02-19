@@ -1,0 +1,76 @@
+@import "../style/style.scss";
+
+.prezentation {
+    & > div {
+        & > p {
+            color: $font-bgc-main;
+            text-align: center;
+            text-shadow: 2px 1px 1px $add-color2;
+            @include font-size(1.2rem);
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        li {
+            h3 {
+                text-align: center;
+            }
+        }
+    }
+
+    blockquote {
+        margin: 20px -10px;
+        padding: 50px 30px;
+        text-align: justify;
+        background: linear-gradient($add-color, $add-color2 20%, $bgc-main, $add-color2 80%, $add-color);
+        color: $font-bgc-main;
+        @include font-size(1.15rem);
+        line-height: 1.5rem;
+        font-weight: bold;
+    }
+
+    .title {
+        p {
+            text-align: center;
+            margin: 0;
+            color: $font-bgc-main;
+            @include font-size(2rem);
+            text-shadow: -4px 2px 5px #242424, -3px 1px 1px #5b5a5a, -2px 0 0 #b9b7b7, -1px 0 0 #dadada,
+                0 0px 20px $bgc-main, 0 0px 20px $bgc-main, 0 0px 20px $bgc-main, 0 0px 20px #000;
+            letter-spacing: 5px;
+        }
+    }
+
+    .dev {
+        .skills {
+            display: flex;
+            justify-content: space-evenly;
+            background: linear-gradient($bgc-add, $add-color2 20%, $add-color2 80%, $bgc-add);
+            margin: 0 -10px;
+            padding: 20px;
+        }
+    }
+
+    .projects {
+        .project-links {
+            background-color: $font-bgc-main;
+            padding: 10px 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap: 20px;
+            margin: 0 -10px;
+
+            a {
+                display: block;
+                transition: filter 0.2s;
+                filter: grayscale(0.7);
+
+                &:hover {
+                    filter: grayscale(0);
+                }
+            }
+        }
+    }
+}

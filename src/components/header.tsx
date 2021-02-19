@@ -21,9 +21,9 @@ function Header(props: propType) {
             <div className="title">
                 <h2>Łukasz Milewski<br /> <span>{title}</span></h2>
             </div>
-            <Nav type="drag" title={props.title}/>
-            <Social></Social>
-            <Language></Language>
+            <Nav type="drag" title={props.title} />
+            <Social ></Social>
+            <Language ></Language>
         </header >
     )
 }

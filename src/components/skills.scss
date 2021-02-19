@@ -1,5 +1,18 @@
-@import '../style/style';
+@import "../style/style";
 
+.skill-style {
+    @include font-size(3rem);
+
+    &.image {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        img {
+            width: inherit;
+            height: inherit;
+        }
+    }
+}
 
 .js {
     color: #ffca00;
@@ -22,11 +35,11 @@
 }
 
 .git {
-    color:#e84d31;
+    color: #e84d31;
 }
 
-.github{
-    color:#000;
+.github {
+    color: #000;
 }
 
 .linkedin {

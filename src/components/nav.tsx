@@ -1,9 +1,10 @@
-import React, { Dispatch, useEffect, useMemo, useState } from "react"
+import React, { Dispatch, useEffect, useMemo } from "react"
 import { Link } from "gatsby"
 import { useLanguageContext } from '../hooks/useLanguageContext'
 import './nav.scss'
 import navL from '../data/nav.json'
 import { navigate } from '@reach/router';
+import { useLocation } from "@reach/router"
 
 type propTypes = {
     type: string,
@@ -19,7 +20,10 @@ const Nav = (prop: propTypes) => {
     const language: string = langContext.lang;
     let currSite = null;
     let links;
-    let [title, setTitle] = useState('');
+    let title = ''
+    const location = useLocation();
+
+    useEffect(() => { title.toLowerCase(); prop.title.setTitle(title.charAt(0).toUpperCase() + title.slice(1) + ' - ') }, [language, title])
 
     if (type == "drag") {
         const onDrop = (event) => {
@@ -33,14 +37,13 @@ const Nav = (prop: propTypes) => {
                 currSite = event.target;
                 currSite.draggable = true;
                 currSite.classList.add('drag');
-                let t = currSite.firstChild.innerText;
-                setTitle(t)
-                let split = prop.title.title.split('-')
-                prop.title.setTitle(t.concat('-', (!split[1]) ? split[0] : split[1]))
+                title = currSite.innerText.toLowerCase();
+                prop.title.setTitle((title.charAt(0).toUpperCase()) + title.slice(1) + ' - ')
                 navigate(currSite.children[0].pathname)
             }
             event.dataTransfer.clearData();
         }
+
 
         const onDragOver = (event) => {
             event.preventDefault();
@@ -85,9 +88,10 @@ const Nav = (prop: propTypes) => {
         links = useMemo(() => {
             return < ul className="nav nav-dragdrop" >
                 {navL.map(elem => {
-                    let path = elem.link == window.location.pathname
+                    let path = (elem.link == location.pathname)
+
                     if (path) {
-                        setTitle(elem.name[language])
+                        title = elem.name[language]
                     }
                     let is = elem.name[language] == title;
                     return <li key={elem.key} {...events}
@@ -96,36 +100,34 @@ const Nav = (prop: propTypes) => {
                         <Link to={elem.link} onClick={onClick}  >{elem.name[language]}</Link>
                     </li>
                 })}
-                {(type == 'drag') ? <li className="drag" draggable="true" >{title}</li> : ''}
+                {(type == 'drag') ? <li className="drag" draggable="true" ><h2>{title}</h2></li> : ''}
             </ul>
-        }, [title, language, prop.title.title])
+        }, [location, language])
 
     } else {
 
         const onClick = (event) => {
             event.preventDefault()
             const target = event.currentTarget;
-            setTitle(target.innerText)
-            let split = prop.title.title.split('-')
-            prop.title.setTitle(target.innerText.concat('-', (!split[1]) ? split[0] : split[1]))
+            title = target.innerText
             navigate(target.pathname);
         }
 
         links = useMemo(() => {
             return <ul className="nav nav-list">
                 {navL.map(elem => {
-                    let path = elem.link == window.location.pathname
+                    let path = (elem.link === location.pathname);
                     if (path) {
-                        setTitle(elem.name[language])
+                        title = elem.name[language];
                     }
 
                     return <li key={elem.key}
-                        className={(title === elem.name[language].toUpperCase() || path) ? 'active' : ''}>
+                        className={(path) ? 'active' : ''}>
                         <Link onClick={onClick} to={elem.link}>{elem.name[language]}</Link>
                     </li>
                 })}
             </ul>
-        }, [title, language, prop.title.title])
+        }, [language, location])
     }
     return (
         <nav >

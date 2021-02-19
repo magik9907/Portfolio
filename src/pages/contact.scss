@@ -1,0 +1,54 @@
+@import "../style/style.scss";
+.contact {
+    h1 {
+        margin:0 -10px;
+        padding: 10px;
+        border-top: 3px solid $add-color2;
+        border-bottom: 3px solid $add-color2;
+        text-align: center;
+        @include font-size(2rem);
+        background-image: linear-gradient(90deg,$add-color2 40%, $bgc-main, $add-color2 60%);
+        background-clip: text;
+        font-weight: bold;
+        color: transparent;
+        position: relative;
+
+        &::after {
+            content: "";
+            background-color: $add-color2;
+            position: absolute;
+            top: -15px;
+            left: -10px;
+            width: 100vw;
+            height: calc(100%+30px);
+            z-index: -10;
+        }
+    }
+
+    iframe{
+        height: 600px;
+        outline: none;
+        border:0;
+    }
+
+    .social{
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+        text-align: center;
+        background-color: $add-color2;
+        margin: 20px -10px;
+        justify-content: space-evenly;
+
+        .mail{
+            color: $font-bgc-main;
+            text-transform: uppercase;
+            font-weight: bold;
+           }
+ 
+           .social-link{
+               display: flex;
+               justify-content: space-evenly;
+           }
+    }
+}
