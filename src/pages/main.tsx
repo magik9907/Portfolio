@@ -3,7 +3,7 @@ import './main.scss'
 import { useLanguageContext } from '../hooks/useLanguageContext'
 import json from '../data/main.json'
 import Skills from "../components/skills"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import Img from "gatsby-image"
 
 type propsType = {
@@ -11,8 +11,8 @@ type propsType = {
 
 const Project = (props) => {
 
-  return (<Link to={props.link.link} className={props.eKey}>
-    <Img fluid={props.element.childImageSharp.fluid} title={props.link.title} alt={props.eKey} />
+  return (<Link to={'/projects/#'.concat(props.eKey)} className={props.eKey}>
+    <img src={"/images/".concat(props.eKey, '.jpg')} title={props.title} alt={props.title} />
   </Link>
 
   )
@@ -20,40 +20,15 @@ const Project = (props) => {
 
 
 const Main = (props: propsType) => {
-  const query = useStaticQuery(graphql`
-    query {
-        dreamvoyage: file(relativePath: {  eq:"images/dreamvoyage.jpg" }) {
-            childImageSharp {
-                fluid {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-        elbutito: file(relativePath: {  eq:"images/elbutito.jpg" }) {
-            childImageSharp {
-                fluid {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-        themealrecipe: file(relativePath: { eq:"images/themealrecipe.jpg" }) {
-            childImageSharp {
-                fluid {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-      }
-      `)
+
 
   const links = {
-    dreamvoyage: { title: 'DreamVoyage', link: '/projects/dreamvoyage' },
-    elbutito: { title: 'ElButito', link: '/projects/elbutito' },
-    themealrecipe: { title: 'The Meal Recipe', link: '/projects/themealrecipe' },
+    dreamvoyage: { title: 'DreamVoyage' },
+    elbutito: { title: 'Elbutito' },
+    themealrecipe: { title: 'The Meal Recipe' },
   }
 
   const langCont = useLanguageContext();
-  const img = Object.entries(query).map(([key, element]) => <Project key={key.toString()} element={element}></Project>)
 
   return (
     <section id="prezentation" className="prezentation">
@@ -71,7 +46,7 @@ const Main = (props: propsType) => {
       <div className="projects">
         <p>Projekty</p>
         <div className="project-links">
-          {Object.entries(query).map(([key, element]) => <Project key={key} eKey={key.toString()} element={element} link={links[key]}></Project>)}
+          {Object.entries(links).map(([key, element]) => <Project key={key} eKey={key.toString()} title={element.title} ></Project>)}
         </div>
       </div>
     </section>

@@ -1,0 +1,53 @@
+@import "../style/style.scss";
+
+.projects {
+    color: white;
+    background-image: linear-gradient(180deg, #23a8f1 0%, #87c878 25%, #120e1c 50%, #333 75%);
+    font-weight: 900;
+    margin: 0 -10px;
+    scroll-behavior: smooth;
+    padding: 0;
+    article {
+        img {
+            width: 100%;
+        }
+
+        h4 {
+            color: $font-bgc-main;
+            @include font-size(1.6rem);
+        }
+
+        & > div {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            &:first-child {
+                padding: 0 15px;
+                .skills {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+
+        .links {
+            text-align: center;
+
+            a {
+                padding: 10px 20px;
+                flex-basis: 50%;
+
+                &:first-child {
+                    background-color: $font-bgc-main;
+                    color: $add-color2;
+                }
+
+                &:last-child {
+                    background-color: $add-color2;
+                    color: $font-bgc-main;
+                }
+            }
+        }
+    }
+}

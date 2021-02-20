@@ -59,23 +59,26 @@ const Skills = (props: propsType) => {
     const list = skills.map(key => {
         if (notAwesome.indexOf(key) != -1) {
             if (typeof skillsList[key] == 'string') {
+                console.log(key)
                 let title = key.replace(/(IMG)$/, '');
                 return (<span key={key} className={key.concat(' skill-style image')}>
                     <img src={'/icons/'.concat(title, '.png')} title={title} alt={title}></img>
                 </span>)
-            } else
-                <svg {...skillsList[key]['attr']}>
+            }
+            return <span key={key} className={key.concat(' skill-style ')}>
+                <svg {...skillsList[key]['attr']} >
                     <path {...skillsList[key].cont['path']}></path>
                 </svg>
+            </span>
 
         } else
-            return (<span key={key} className={key.concat(' skill-style')}>
+            return (<span key={key} className={key.concat(' skill-style ')}>
                 <FontAwesomeIcon icon={skillsList[key]} />
             </span>)
     })
 
     return (
-        <div className={"skills ".concat(props.className)}>
+        <div className={"skills ".concat(props.className || '')}>
             {list}
         </div>
     )

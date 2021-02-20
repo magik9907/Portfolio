@@ -54,6 +54,7 @@
     }
 
     .projects {
+        padding-top: 1px;
         .project-links {
             background-color: $font-bgc-main;
             padding: 10px 0;
@@ -70,6 +71,10 @@
                 &:hover {
                     filter: grayscale(0);
                 }
+            }
+
+            img {
+                width: 100vw;
             }
         }
     }
