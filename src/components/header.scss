@@ -1,27 +1,50 @@
-@import '../style/style.scss';
+@import "../style/style.scss";
 
-header{
-    background:linear-gradient($bgc-main 10%, $add-color2 90%, $bgc-add);
+header {
+    background: linear-gradient($bgc-main 10%, $add-color2 90%, $bgc-add);
     padding: 10px;
 
-    .title{
+    .title {
         display: flex;
         color: $font-bgc-main;
         @include font-size(1.5rem);
 
-        h2{    
+        h2 {
             text-align: center;
             width: 100%;
-            margin: 00 0 15px; 
-            span{
+            margin: 00 0 15px;
+            span {
                 font-style: italic;
                 font-variant: small-caps;
             }
         }
     }
 
-    .social-link{
+    .social-link {
         display: flex;
         justify-content: space-evenly;
+
+        svg {
+            @include font-size(2rem);
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    header {
+        .title {
+            h2 {
+                @include font-size(3rem);
+                span {
+                    @include font-size(2.5rem);
+                }
+            }
+        }
+
+        .social-link {
+            svg {
+                @include font-size(3rem);
+            }
+        }
     }
 }

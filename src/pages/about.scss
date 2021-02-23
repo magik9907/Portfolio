@@ -54,27 +54,99 @@
     .features {
         grid-column: 1/4;
         margin: 0px -10px;
-        padding: 10px;
+        div {
+            padding: 0 10px;
 
-        h4 {
-            @include font-size(1.4rem);
-            background-color: $font-bgc-main;
-            margin: 0 -10px;
-            padding: 15px;
-            text-align: center;
-            em {
-                font-style: normal;
-                text-transform: uppercase;
-                color: $bgc-main;
+            h4 {
+                @include font-size(1.4rem);
+                background-color: $font-bgc-main;
+                margin: 0 -10px;
+                padding: 15px;
+                text-align: center;
+                em {
+                    font-style: normal;
+                    text-transform: uppercase;
+                    color: $bgc-main;
+                }
+            }
+
+            p {
+                @include font-size(1.2rem);
+                text-align: justify;
+                margin: 0 -10px;
+                background-image: linear-gradient(180deg, $font-bgc-main, transparent);
+                padding: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .about {
+        .desc {
+            h3 {
+            }
+
+            p {
+                @include font-size(1.4rem);
+                text-align: center;
+                span {
+                }
+            }
+
+            .skills-group {
+                height: 300px;
+                padding: 0 20px;
+                flex-direction: column;
+                background: linear-gradient(0deg, $font-bgc-main 33%, $bgc-main, $add-color2 66%);
+
+                .skills {
+                    flex-direction: row;
+                }
             }
         }
 
-        p {
-            @include font-size(1.2rem);
-            text-align: justify;
-            margin: 0 -10px;
-            background-image: linear-gradient(180deg, $font-bgc-main, transparent);
-            padding: 10px;
+        .features {
+            div {
+                h4 {
+                }
+
+                p {
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .about {
+        .desc {
+            h3 {
+            }
+
+            p {
+                span {
+                }
+            }
+
+            .skills-group {
+                .skills {
+                }
+            }
+        }
+
+        .features {
+            display: flex;
+            div {
+                flex-basis: calc(1/3 * 100%);
+                h4 {
+                    @include font-size(1.8rem);
+                }
+
+                p {
+                    @include font-size(1.4rem);
+                }
+            }
         }
     }
 }

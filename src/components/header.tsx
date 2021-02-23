@@ -15,13 +15,12 @@ type propType = {
 
 function Header(props: propType) {
     const title = useTitle()
-
     return (
         <header>
             <div className="title">
                 <h2>Łukasz Milewski<br /> <span>{title}</span></h2>
             </div>
-            <Nav type="drag" title={props.title} />
+            <Nav type={('ontouchstart' in document.documentElement) ? "list" : 'drag'} title={props.title} />
             <Social ></Social>
             <Language ></Language>
         </header >

@@ -59,7 +59,6 @@ const Skills = (props: propsType) => {
     const list = skills.map(key => {
         if (notAwesome.indexOf(key) != -1) {
             if (typeof skillsList[key] == 'string') {
-                console.log(key)
                 let title = key.replace(/(IMG)$/, '');
                 return (<span key={key} className={key.concat(' skill-style image')}>
                     <img src={'/icons/'.concat(title, '.png')} title={title} alt={title}></img>

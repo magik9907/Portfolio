@@ -20,18 +20,20 @@ const About = () => {
                 </div>
             </div>
             <div className="features">
-                <h4>Wybieram <em>wyzwanie</em></h4>
-                <p>Trudne zadania są częścią życia. Uwielbiam grę w piłkę nożną i bronienie trudnych strzałów na bramkę. Jest to tym bardziej satysfakcjonujące gdy łączysz wyzwania z tym co lubisz.</p>
-            </div>
+                <div >
+                    <h4>Wybieram <em>wyzwanie</em></h4>
+                    <p>Trudne zadania są częścią życia. Uwielbiam grę w piłkę nożną i bronienie trudnych strzałów na bramkę. Jest to tym bardziej satysfakcjonujące gdy łączysz wyzwania z tym co lubisz.</p>
+                </div>
 
-            <div className="features">
-                <h4>Preferuje <em>stabilność</em></h4>
-                <p>Nie jestem zwolennikiem częstych zmian otoczenia. Czuję się najlepiej, gdy znam ludzi z którymi współpracuję i wiem co potrafią.</p>
+                <div >
+                    <h4>Preferuje <em>stabilność</em></h4>
+                    <p>Nie jestem zwolennikiem częstych zmian otoczenia. Czuję się najlepiej, gdy znam ludzi z którymi współpracuję i wiem co potrafią.</p>
+                </div>
+                <div >
+                    <h4>Otwieram się na <em>rozwój</em></h4>
+                    <p>Nie zamierzam zamykać się na jedną technologię. Poznanie procesu tworzenia oprogramowania w różnych specjalizacjach pozwoli na tworzenie wydajniejszego oprogramowania.</p>
+                </div >
             </div>
-            <div className="features">
-                <h4>Otwieram się na <em>rozwój</em></h4>
-                <p>Nie zamierzam zamykać się na jedną technologię. Poznanie procesu tworzenia oprogramowania w różnych specjalizacjach pozwoli na tworzenie wydajniejszego oprogramowania.</p>
-            </div >
         </section>
     )
 }

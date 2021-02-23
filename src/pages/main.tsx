@@ -11,7 +11,7 @@ type propsType = {
 
 const Project = (props) => {
 
-  return (<Link to={'/projects/#'.concat(props.eKey)} className={props.eKey}>
+  return (<Link to={'/projects/'} className={props.eKey}>
     <img src={"/images/".concat(props.eKey, '.jpg')} title={props.title} alt={props.title} />
   </Link>
 
@@ -23,6 +23,7 @@ const Main = (props: propsType) => {
 
 
   const links = {
+    portfolio: { title: 'Portfolio' },
     dreamvoyage: { title: 'DreamVoyage' },
     elbutito: { title: 'Elbutito' },
     themealrecipe: { title: 'The Meal Recipe' },
