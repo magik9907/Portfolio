@@ -18,7 +18,7 @@ class LanguageProvider extends React.Component<{}, { language: string }> {
         const localization = navigator.language;
         const isPl: boolean = (localization.split('-')[0] === 'pl');
         this.state = {
-            language: this.lang[(isPl) ? 'pl' : 'en'].value
+            language: localStorage.getItem("language") || this.lang[(isPl) ? 'pl' : 'en'].value
         };
     }
 
@@ -32,6 +32,7 @@ class LanguageProvider extends React.Component<{}, { language: string }> {
     }
 
     changeLanguage = (language: string) => {
+        window.localStorage.setItem("language", language);
         this.setState({ language: this.lang[language].value })
     }
 
