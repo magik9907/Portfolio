@@ -4,6 +4,15 @@ import json from '../data/about.json'
 import Skills from '../components/skills'
 import './about.scss'
 
+const Feature = (props) => {
+    const feature = props.feature;
+    const lang = props.lang;
+    return <div >
+        <h4>{feature.title1} <em>{feature.title2}</em></h4>
+        <p>{feature.desc}</p>
+    </div>
+}
+
 const About = () => {
     const langContext = useLanguageContext()
     const lang = langContext.lang;
@@ -12,7 +21,7 @@ const About = () => {
         <section className="about" id="about">
             <div className="desc">
                 <h3>Łukasz Milewski</h3>
-                <p><span>Student i człowiek który zainteresował się JavaScript-em</span></p>
+                <p><span>{json.subtitle[lang]}</span></p>
                 <div className="skills-group">
                     <Skills skills={['js', 'reactjs', 'gatsby', 'scss', 'css', 'html']} className="frontend" />
                     <Skills skills={['csharp', 'sql']} className="backend" />
@@ -20,19 +29,7 @@ const About = () => {
                 </div>
             </div>
             <div className="features">
-                <div >
-                    <h4>Wybieram <em>wyzwanie</em></h4>
-                    <p>Trudne zadania są częścią życia. Uwielbiam grę w piłkę nożną i bronienie trudnych strzałów na bramkę. Jest to tym bardziej satysfakcjonujące gdy łączysz wyzwania z tym co lubisz.</p>
-                </div>
-
-                <div >
-                    <h4>Preferuje <em>stabilność</em></h4>
-                    <p>Nie jestem zwolennikiem częstych zmian otoczenia. Czuję się najlepiej, gdy znam ludzi z którymi współpracuję i wiem co potrafią.</p>
-                </div>
-                <div >
-                    <h4>Otwieram się na <em>rozwój</em></h4>
-                    <p>Nie zamierzam zamykać się na jedną technologię. Poznanie procesu tworzenia oprogramowania w różnych specjalizacjach pozwoli na tworzenie wydajniejszego oprogramowania.</p>
-                </div >
+                {json.features.map(elem => <Feature  feature={elem[lang]} key={elem[lang].title2} />)}
             </div>
         </section>
     )

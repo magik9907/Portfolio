@@ -1,3 +1,28 @@
 {
-    
+    "quote": {
+        "pl": "Nie każdy język programowania jest dla każdego, ale każdy może znaleźć swój ulubiony język.",
+        "en": "Not all programming language is for everyone, but everyone can find their favorite language"
+    },
+    "projectsSkills": {
+        "pl": "W projektach wykorzystuję technologie:",
+        "en": "In projects, I'm using:"
+    },
+    "project": {
+        "pl": "Projekty",
+        "en": "Projects"
+    },
+    "links": {
+        "portfolio": {
+            "title": "Portfolio"
+        },
+        "dreamvoyage": {
+            "title": "DreamVoyage"
+        },
+        "elbutito": {
+            "title": "Elbutito"
+        },
+        "themealrecipe": {
+            "title": "The Meal Recipe"
+        }
+    }
 }

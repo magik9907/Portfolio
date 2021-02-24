@@ -24,36 +24,7 @@ const Project = (props) => {
 const Projects = () => {
     const langContext = useLanguageContext()
     const lang = langContext.lang;
-    const projectLinks = [{
-        title: 'Project',
-        class: 'project',
-        skills: ['gatsby', 'scss', 'html'],
-        imgPath: "../images/portfolio.jpg",
-        link: '/',
-        git: 'https://github.com/magik9907/magik9907.github.io',
-    }, {
-        title: 'elbutito',
-        class: 'elbutito',
-        skills: ['css', 'html'],
-        imgPath: "../images/elbutito.jpg",
-        link: '/elbutito',
-        git: 'https://github.com/magik9907/Elbutito',
-    }, {
-        title: 'DreamVoyage',
-        class: 'dreamvoyage',
-        skills: ['js', 'css', 'html'],
-        imgPath: "../images/dreamvoyage.jpg",
-        link: '/DreamVoyage-include-form-validation-in-JS-/',
-        git: 'https://github.com/magik9907/DreamVoyage-include-form-validation-in-JS-',
-    }, {
-        title: 'The Meal Recipe',
-        class: 'themealrecipe',
-        skills: ['js', 'css', 'html'],
-        imgPath: "../images/themealrecipe.jpg",
-        link: '/TheMealRecipe',
-        git: 'https://github.com/magik9907/TheMealRecipe',
-    },
-    ]
+    const projectLinks = json.projects;
 
 
 

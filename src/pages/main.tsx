@@ -10,9 +10,9 @@ type propsType = {
 }
 
 const Project = (props) => {
-
+  const src = "/images/".concat(props.eKey, '.jpg')
   return (<Link to={'/projects/'} className={props.eKey}>
-    <img src={"/images/".concat(props.eKey, '.jpg')} title={props.title} alt={props.title} />
+    <img src={src} title={props.title} alt={props.title} />
   </Link>
 
   )
@@ -21,31 +21,24 @@ const Project = (props) => {
 
 const Main = (props: propsType) => {
 
-
-  const links = {
-    portfolio: { title: 'Portfolio' },
-    dreamvoyage: { title: 'DreamVoyage' },
-    elbutito: { title: 'Elbutito' },
-    themealrecipe: { title: 'The Meal Recipe' },
-  }
-
-  const langCont = useLanguageContext();
-
+  const links = json.links;
+  const langContext = useLanguageContext();
+  let lang = langContext.lang;
   return (
     <section id="prezentation" className="prezentation">
       <div className="title">
         <p className="fullName">Łukasz Milewski</p>
       </div>
 
-      <blockquote>Nie każdy język programowania jest dla każdego, ale każdy może znaleźć swój ulubiony język.</blockquote>
+      <blockquote>{json.quote[lang]}</blockquote>
 
       <div className="dev">
-        <p>W projektach wykorzystuję technologie: </p>
+        <p>{json.projectsSkills[lang]} </p>
         <Skills skills={['reactjs', 'js', 'scss']}></Skills>
       </div>
 
       <div className="projects">
-        <p>Projekty</p>
+        <p>{json.project[lang]}</p>
         <div className="project-links">
           {Object.entries(links).map(([key, element]) => <Project key={key} eKey={key.toString()} title={element.title} ></Project>)}
         </div>

@@ -1,3 +1,44 @@
 {
-    
+    "subtitle": {
+        "pl": "Student i człowiek który zainteresował się JavaScript-em",
+        "en": "Student and man who became interested in JavaScript"
+    },
+    "features": [
+        {
+            "pl": {
+                "title1": "Wybieram ",
+                "title2": "wyzwanie",
+                "desc": "Trudne zadania są częścią życia. Uwielbiam grę w piłkę nożną i bronienie trudnych strzałów na bramkę. Jest to tym bardziej satysfakcjonujące gdy łączysz wyzwania z tym co lubisz."
+            },
+            "en": {
+                "title1": "I choose",
+                "title2": "challenge",
+                "desc": "Difficult tasks are part of life. I love playing football and defending difficult shots on goal. It is more rewarding when you combine challenges with what you like."
+            }
+        },
+        {
+            "pl": {
+                "title1": "Preferuje",
+                "title2": "stabilność",
+                "desc": "Nie jestem zwolennikiem częstych zmian otoczenia. Czuję się najlepiej, gdy znam ludzi z którymi współpracuję i wiem co potrafią."
+            },
+            "en": {
+                "title1": "I prefer",
+                "title2": "stability",
+                "desc": "I am not a fan of frequent changes in the environment. I feel best when I know the people I work with and what they can do."
+            }
+        },
+        {
+            "pl": {
+                "title1": "Otwieram się na",
+                "title2": "rozwój",
+                "desc": "Nie zamierzam zamykać się na jedną technologię. Poznanie procesu tworzenia oprogramowania w różnych specjalizacjach pozwoli na tworzenie wydajniejszego oprogramowania."
+            },
+            "en": {
+                "title1": "I am open to ",
+                "title2": "development",
+                "desc": "I am not going to close myself to one technology. Understanding the software development process in various specializations will allow you to create more efficient software."
+            }
+        }
+    ]
 }
