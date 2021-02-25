@@ -20,7 +20,7 @@ function Header(props: propType) {
             <div className="title">
                 <h2>Łukasz Milewski<br /> <span>{title}</span></h2>
             </div>
-            <Nav type={('ontouchstart' in document.documentElement) ? "list" : 'drag'} title={props.title} />
+            <Nav type={(typeof window !== 'undefined' && 'ontouchstart' in window.document.documentElement) ? "list" : 'drag'} title={props.title} />
             <Social ></Social>
             <Language ></Language>
         </header >

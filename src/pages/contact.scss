@@ -3,26 +3,12 @@
     h1 {
         margin: 0 -10px;
         padding: 10px;
-        border-top: 3px solid $add-color2;
-        border-bottom: 3px solid $add-color2;
         text-align: center;
         @include font-size(2rem);
-        background-image: linear-gradient(90deg, $add-color2 40%, $bgc-main, $add-color2 60%);
-        background-clip: text;
+        background-image: linear-gradient(90deg, $add-color2, $bgc-main, $add-color2);
         font-weight: bold;
-        color: transparent;
+        color: $font-bgc-main;
         position: relative;
-
-        &::after {
-            content: "";
-            background-color: $add-color2;
-            position: absolute;
-            top: -15px;
-            left: -10px;
-            width: 100vw;
-            height: calc(100%+30px);
-            z-index: -10;
-        }
     }
 
     iframe {
@@ -55,18 +41,8 @@
 
 @media screen and (min-width: 600px) {
     .contact {
-        h1 {
-            &::after {
-            }
-        }
-
-        iframe {
-        }
-
         .social {
             @include font-size(1.5rem);
-            .mail {
-            }
 
             .social-link {
                 svg {

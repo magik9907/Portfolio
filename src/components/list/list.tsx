@@ -1,7 +1,7 @@
 import React from 'react'
 import ListItem from './listItem'
 
-type PropsItemType = (String | JSX.Element | HTMLElement | {text:string, tag:string})
+type PropsItemType = (String | JSX.Element | HTMLElement | { text: string, tag: string })
 type PropsItemArrayType = PropsItemType[]
 
 type PropsType = {
@@ -12,10 +12,10 @@ type PropsType = {
 
 export default function List(props: PropsType) {
     const items: PropsItemArrayType = props.items;
-    
-    const itemGenerator  = (x: PropsItemType, index ) => {return(<ListItem key={index}>{x}</ListItem>)};
+    if (items.length > 0) (<></>);
+    const itemGenerator = (x: PropsItemType, index) => { return (<ListItem key={index}>{x}</ListItem>) };
     const listItems = items.map(itemGenerator);
-    
+
     return (
         <div className={props.containerClass}>
             {(props.order) ? <ol>{listItems}</ol> : <ul>{listItems}</ul>}
