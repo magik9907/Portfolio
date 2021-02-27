@@ -4,9 +4,9 @@ import { useLanguageContext } from '../hooks/useLanguageContext'
 import json from '../data/main.json'
 import Skills from "../components/skills"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
 
 type propsType = {
+  onLoad?: ()=>void
 }
 
 const Project = (props) => {
@@ -25,7 +25,7 @@ const Main = (props: propsType) => {
   const langContext = useLanguageContext();
   let lang = langContext.lang;
   return (
-    <section id="prezentation" className="prezentation">
+    <section onLoad={props.onLoad } id = "prezentation" className = "prezentation" >
       <div className="title">
         <p className="fullName">Łukasz Milewski</p>
       </div>
@@ -43,7 +43,7 @@ const Main = (props: propsType) => {
           {Object.entries(links).map(([key, element]) => <Project key={key} eKey={key.toString()} title={element.title} ></Project>)}
         </div>
       </div>
-    </section>
+    </section >
   )
 }
 

@@ -88,19 +88,31 @@ const Nav = (prop: propTypes) => {
         links = useMemo(() => {
             return < ul className="nav nav-dragdrop" >
                 {navL.map(elem => {
-                    let path = (elem.link == location.pathname)
+                    let pathname = location.pathname;
+                    let isCorrectPath = (elem.link === (
+                        pathname.split('/').length === 3
+                            ? pathname.replace("/".concat(pathname.split('/')[1]), "")
+                            : pathname
+                    )
+                    )
 
-                    if (path) {
+                    if (isCorrectPath) {
                         title = elem.name[language]
                     }
-                    let is = elem.name[language] == title;
+                    let isDraggable = elem.name[language] == title;
                     return <li key={elem.key} {...events}
-                        draggable={(is) ? 'true' : 'false'}
-                        className={"dropzone ".concat((is) ? 'drag' : '')}>
+                        draggable={(isDraggable) ? 'true' : 'false'}
+                        className={"dropzone ".concat((isDraggable) ?
+                            'drag'
+                            : ''
+                        )}>
                         <Link to={elem.link} onClick={onClick}  >{elem.name[language]}</Link>
                     </li>
                 })}
-                {(type == 'drag') ? <li className="drag" draggable="true" ><h2>{title}</h2></li> : ''}
+                {(type === 'drag')
+                    ? <li className="drag" draggable="true" ><h2>{title}</h2></li>
+                    : ''
+                }
             </ul>
         }, [location, language])
 
@@ -116,13 +128,20 @@ const Nav = (prop: propTypes) => {
         links = useMemo(() => {
             return <ul className="nav nav-list">
                 {navL.map(elem => {
-                    let path = (elem.link === location.pathname);
-                    if (path) {
+                    let pathname = location.pathname;
+                    let isCorrectPath = (elem.link === (
+                        pathname.split('/').length === 3
+                            ? pathname.replace("/".concat(pathname.split('/')[1]), "")
+                            : pathname
+                    )
+                    )
+
+                    if (isCorrectPath) {
                         title = elem.name[language];
                     }
 
                     return <li key={elem.key}
-                        className={(path) ? 'active' : ''}>
+                        className={(isCorrectPath) ? 'active' : ''}>
                         <Link onClick={onClick} to={elem.link}>{elem.name[language]}</Link>
                     </li>
                 })}
