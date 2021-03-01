@@ -1,122 +1,129 @@
 @import "../style/style.scss";
 
 .prezentation {
-    & > div {
-        & > p {
-            color: $font-bgc-main;
-            text-align: center;
-            text-shadow: 2px 1px 1px $add-color2;
-            @include font-size(1.2rem);
+  & > div {
+    & > p {
+      color: $font-bgc-main;
+      text-align: center;
+      text-shadow: 2px 1px 1px $add-color2;
+      @include font-size(1.2rem);
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      h3 {
+        text-align: center;
+      }
+    }
+  }
+
+  blockquote {
+    padding: 0 30px;
+    margin: 20px -10px;
+    display: flex;
+    align-items: center;
+    height: 150px;
+    justify-content: center;
+    background: linear-gradient(
+      $add-color,
+      $add-color2 20%,
+      $bgc-main,
+      $add-color2 80%,
+      $add-color
+    );
+    color: $font-bgc-main;
+    @include font-size(1.5rem);
+    font-weight: bold;
+  }
+
+  .title {
+    p {
+      text-align: center;
+      margin: 0;
+      color: $font-bgc-main;
+      @include font-size(2rem);
+      text-shadow: -4px 2px 5px #242424, -3px 1px 1px #5b5a5a, -2px 0 0 #b9b7b7,
+        -1px 0 0 #dadada, 0 0px 20px $bgc-main, 0 0px 20px $bgc-main,
+        0 0px 20px $bgc-main, 0 0px 20px #000;
+      letter-spacing: 5px;
+    }
+  }
+
+  .dev {
+    .skills {
+      display: flex;
+      justify-content: space-evenly;
+      background: linear-gradient($bgc-add, $add-color2 20%, $add-color2);
+      margin: 0 -10px;
+      padding: 20px;
+    }
+  }
+
+  .projects {
+    padding-top: 1px;
+    margin: 0 -10px;
+
+    .project-links {
+      background-color: $font-bgc-main;
+      padding: 10px 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 20px;
+
+      a {
+        height: fit-content;
+        display: block;
+        transition: filter 0.2s;
+        filter: grayscale(0.7);
+        max-width: 500px;
+        margin: 0 auto;
+
+        &:hover {
+          filter: grayscale(0);
         }
+      }
+
+      img {
+        width: 100%;
+      }
     }
-
-    ul {
-        list-style: none;
-        padding: 0;
-        li {
-            h3 {
-                text-align: center;
-            }
-        }
-    }
-
-    blockquote {
-        padding: 0 30px;
-        margin: 20px -10px;
-        display: flex;
-        align-items: center;
-        height: 150px;
-        justify-content: center;
-        background: linear-gradient($add-color, $add-color2 20%, $bgc-main, $add-color2 80%, $add-color);
-        color: $font-bgc-main;
-        @include font-size(1.5rem);
-        font-weight: bold;
-    }
-
-    .title {
-        p {
-            text-align: center;
-            margin: 0;
-            color: $font-bgc-main;
-            @include font-size(2rem);
-            text-shadow: -4px 2px 5px #242424, -3px 1px 1px #5b5a5a, -2px 0 0 #b9b7b7, -1px 0 0 #dadada,
-                0 0px 20px $bgc-main, 0 0px 20px $bgc-main, 0 0px 20px $bgc-main, 0 0px 20px #000;
-            letter-spacing: 5px;
-        }
-    }
-
-    .dev {
-        .skills {
-            display: flex;
-            justify-content: space-evenly;
-            background: linear-gradient($bgc-add, $add-color2 20%, $add-color2 );
-            margin: 0 -10px;
-            padding: 20px;
-        }
-    }
-
-    .projects {
-        padding-top: 1px;
-        margin: 0 -10px;
-
-        .project-links {
-            background-color: $font-bgc-main;
-            padding: 10px 0;
-            display: grid;
-            grid-template-columns: 1fr;
-            row-gap: 20px;
-
-            a {
-                height: fit-content;
-                display: block;
-                transition: filter 0.2s;
-                filter: grayscale(0.7);
-                max-width: 500px;
-                margin: 0 auto;
-
-                &:hover {
-                    filter: grayscale(0);
-                }
-            }
-
-            img {
-                width: 100%;
-            }
-        }
-    }
+  }
 }
 
 @media screen and (min-width: 800px) {
-    .prezentation {
-        & > div {
-            & > p {
-                @include font-size(1.6rem);
-            }
-        }
-        blockquote {
-            @include font-size(2rem);
-        }
-
-        .title {
-            p {
-                @include font-size(3rem);
-            }
-        }
-
-        .projects {
-            .project-links {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
+  .prezentation {
+    & > div {
+      & > p {
+        @include font-size(1.6rem);
+      }
     }
+    blockquote {
+      @include font-size(2rem);
+    }
+
+    .title {
+      p {
+        @include font-size(3rem);
+      }
+    }
+
+    .projects {
+      .project-links {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 1600px) {
-    .prezentation {
-        .projects {
-            .project-links {
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-            }
-        }
+  .prezentation {
+    .projects {
+      .project-links {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
     }
+  }
 }

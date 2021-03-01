@@ -5,7 +5,7 @@ import { useLanguageContext } from "../../hooks/useLanguageContext"
 export default function Index() {
   const langContext = useLanguageContext()
   const onLoad = () => {
-    langContext.changeLanguage("pl")
+    langContext.changeLanguage("en")
   }
   return <Main onLoad={onLoad} />
 }

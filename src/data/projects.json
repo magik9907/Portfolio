@@ -1,120 +1,105 @@
 {
-    "projects": [
-        {
-            "title": "Project",
-            "class": "project",
-            "skills": [
-                "gatsby",
-                "scss",
-                "html"
-            ],
-            "imgPath": "../images/portfolio.jpg",
-            "link": "/",
-            "git": "https://github.com/magik9907/magik9907.github.io",
-            "pl": {
-                "assume": [
-                    "praktyczne poznanie technologii ReactJS i GatsbyJS",
-                    "wykorzystanie hook-ów i context API",
-                    "rozwijanie wiedzy z SCSS"
-                ],
-                "projectDesc": "Zrealizowanie praktycznego projektu do nauki z wykorzystaniem GatsbyJs."
-            },
-            "en": {
-                "assume": [
-                    "practical knowledge of ReactJS and GatsbyJS technologies",
-                    "using hooks and context API",
-                    "developing knowledge with SCSS"
-                ],
-                "projectDesc": "Carrying out a practical learning project using GatsbyJs."
-            },
-            "extra": {
-                "href": "https://github.com/magik9907/netlify-form",
-                "title": {
-                    "en": "Contact form - Source Code",
-                    "pl": "Formularz kontaktowy - kod źródłowy"
-                }
-            }
-        },
-        {
-            "title": "DreamVoyage",
-            "class": "dreamvoyage",
-            "skills": [
-                "js",
-                "css",
-                "html"
-            ],
-            "imgPath": "../images/dreamvoyage.jpg",
-            "link": "/DreamVoyage-include-form-validation-in-JS-/",
-            "git": "https://github.com/magik9907/DreamVoyage-include-form-validation-in-JS-",
-            "pl": {
-                "assume": [
-                    "Obsługa formularza w JavaScript",
-                    "Nauka CSS3 i HTML",
-                    "Przeniesienie strony z PSD do HTML"
-                ],
-                "projectDesc": "Projekt zrealizowany samodzielnie na bootcamp-ie, zweryfikowany przez Trenera."
-            },
-            "en": {
-                "assume": [
-                    "Form handling in JavaScript",
-                    "Learning CSS3 and HTML",
-                    "Transferring the site from PSD to HTML"
-                ],
-                "projectDesc": "Project realized independently on bootcamp, verified by the Trainer."
-            }
-        },
-        {
-            "title": "The Meal Recipe",
-            "class": "themealrecipe",
-            "skills": [
-                "js",
-                "scss",
-                "html"
-            ],
-            "imgPath": "../images/themealrecipe.jpg",
-            "link": "/TheMealRecipe",
-            "git": "https://github.com/magik9907/TheMealRecipe",
-            "pl": {
-                "assume": [
-                    "Obsługa zdarzeń za pomocą JavaScript-u",
-                    "Pobieranie danych z serwera zewnętrznego za pomocą API i jego zarządzanie",
-                    "Praktyczne wykorzystanie technologi postprocesora CSS: SCSS"
-                ],
-                "projectDesc": "Wykorzystanie JavaScript-u do pobierania danych z API,"
-            },
-            "en": {
-                "assume": [
-                    "Handling events using JavaScript",
-                    "Downloading data from an external server using API and its management",
-                    "Practical use of CSS: SCSS postprocessor technology"
-                ],
-                "projectDesc": "Using JavaScript to retrieve API data,"
-            }
-        },
-        {
-            "title": "elbutito",
-            "class": "elbutito",
-            "skills": [
-                "css",
-                "html"
-            ],
-            "imgPath": "../images/elbutito.jpg",
-            "link": "/elbutito",
-            "git": "https://github.com/magik9907/Elbutito",
-            "pl": {
-                "assume": [
-                    "Praktyczne wykorzystanie HTML i CSS",
-                    "Przeniesienie strony z PSD do HTML"
-                ],
-                "projectDesc": "Projekt z bootcamp-u do nauki CSS i HTML do zrealizowania samodzielnego"
-            },
-            "en": {
-                "assume": [
-                    "Practical use of HTML and CSS",
-                    "Transferring the site from PSD to HTML"
-                ],
-                "projectDesc": "A bootcamp project to learn CSS and HTML to be done on your own"
-            }
+  "projects": [
+    {
+      "title": "Portfolio",
+      "class": "portfolio",
+      "skills": ["gatsby", "scss", "html"],
+      "imgPath": "../images/portfolio.jpg",
+      "link": "/",
+      "git": "https://github.com/magik9907/magik9907.github.io",
+      "pl": {
+        "assume": [
+          "praktyczne poznanie technologii ReactJS i GatsbyJS",
+          "wykorzystanie hook-ów i context API",
+          "rozwijanie wiedzy z SCSS"
+        ],
+        "projectDesc": "Zrealizowanie praktycznego projektu do nauki z wykorzystaniem GatsbyJs."
+      },
+      "en": {
+        "assume": [
+          "practical knowledge of ReactJS and GatsbyJS technologies",
+          "using hooks and context API",
+          "developing knowledge with SCSS"
+        ],
+        "projectDesc": "Carrying out a practical learning project using GatsbyJs."
+      },
+      "extra": {
+        "href": "https://github.com/magik9907/netlify-form",
+        "title": {
+          "en": "Contact form - Source Code",
+          "pl": "Formularz kontaktowy - kod źródłowy"
         }
-    ]
+      }
+    },
+    {
+      "title": "DreamVoyage",
+      "class": "dreamvoyage",
+      "skills": ["js", "css", "html"],
+      "imgPath": "../images/dreamvoyage.jpg",
+      "link": "/DreamVoyage-include-form-validation-in-JS-/",
+      "git": "https://github.com/magik9907/DreamVoyage-include-form-validation-in-JS-",
+      "pl": {
+        "assume": [
+          "Obsługa formularza w JavaScript",
+          "Nauka CSS3 i HTML",
+          "Przeniesienie strony z PSD do HTML"
+        ],
+        "projectDesc": "Projekt zrealizowany samodzielnie na bootcamp-ie, zweryfikowany przez Trenera."
+      },
+      "en": {
+        "assume": [
+          "Form handling in JavaScript",
+          "Learning CSS3 and HTML",
+          "Transferring the site from PSD to HTML"
+        ],
+        "projectDesc": "Project realized independently on bootcamp, verified by the Trainer."
+      }
+    },
+    {
+      "title": "The Meal Recipe",
+      "class": "themealrecipe",
+      "skills": ["js", "scss", "html"],
+      "imgPath": "../images/themealrecipe.jpg",
+      "link": "/TheMealRecipe",
+      "git": "https://github.com/magik9907/TheMealRecipe",
+      "pl": {
+        "assume": [
+          "Obsługa zdarzeń za pomocą JavaScript-u",
+          "Pobieranie danych z serwera zewnętrznego za pomocą API i jego zarządzanie",
+          "Praktyczne wykorzystanie technologii postprocesora CSS: SCSS"
+        ],
+        "projectDesc": "Wykorzystanie JavaScript-u do pobierania danych z API,"
+      },
+      "en": {
+        "assume": [
+          "Handling events using JavaScript",
+          "Downloading data from an external server using API and its management",
+          "Practical use of CSS postprocessor: SCSS "
+        ],
+        "projectDesc": "Using JavaScript to retrieve API data,"
+      }
+    },
+    {
+      "title": "elbutito",
+      "class": "elbutito",
+      "skills": ["css", "html"],
+      "imgPath": "../images/elbutito.jpg",
+      "link": "/elbutito",
+      "git": "https://github.com/magik9907/Elbutito",
+      "pl": {
+        "assume": [
+          "Praktyczne wykorzystanie HTML i CSS",
+          "Przeniesienie strony z PSD do HTML"
+        ],
+        "projectDesc": "Projekt z bootcamp-u do nauki CSS i HTML do zrealizowania samodzielnego"
+      },
+      "en": {
+        "assume": [
+          "Practical use of HTML and CSS",
+          "Transferring the site from PSD to HTML"
+        ],
+        "projectDesc": "A bootcamp project to learn CSS and HTML to be done on your own"
+      }
+    }
+  ]
 }

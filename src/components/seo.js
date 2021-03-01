@@ -8,9 +8,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql} from "gatsby"
-import '../style/index.scss'
-
+import { useStaticQuery, graphql } from "gatsby"
+import "../style/index.scss"
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -74,9 +73,8 @@ function SEO({ description, lang, meta, title }) {
         },
       ].concat(meta)}
     >
-      <link rel="icon" href={'favicon.ico'} />
-     
-    </Helmet >
+      <link rel="icon" href={"favicon.ico"} />
+    </Helmet>
   )
 }
 
@@ -84,8 +82,8 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-  keywords: '',
-  author: '',
+  keywords: "",
+  author: "",
 }
 
 SEO.propTypes = {

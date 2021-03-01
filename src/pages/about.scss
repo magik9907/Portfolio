@@ -1,152 +1,137 @@
 @import "../style/style.scss";
 .about {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 
-    .desc {
-        grid-column: 1/4;
+  .desc {
+    grid-column: 1/4;
 
-        h3 {
-            background-color: $bgc-main;
-            margin: 0 -10px;
-            text-align: center;
-            padding: 30px;
-            font-size: 2rem;
-            line-height: 2rem;
-            color: $font-bgc-main;
-            mix-blend-mode: luminosity;
-            font-weight: bolder;
-            font-family: fangsong;
-            font-style: italic;
-            letter-spacing: 0.3rem;
-        }
-
-        p {
-            background-color: $add-color2;
-            padding: 20px 10px;
-            margin: 0 -10px;
-            text-align: justify;
-            font-weight: 900;
-            @include font-size(1.2rem);
-
-            span {
-                background-image: linear-gradient(45deg, $bgc-main, $font-bgc-main, $bgc-main);
-                background-clip: text;
-                color: transparent;
-            }
-        }
-
-        .skills-group {
-            display: flex;
-            margin: 0 -10px;
-            padding: 20px;
-            background: linear-gradient(270deg, $font-bgc-main 25%, $bgc-main, $add-color2 75%);
-            .skills {
-                display: flex;
-                flex-direction: column;
-                flex-basis: 33%;
-                justify-content: space-evenly;
-                align-items: center;
-            }
-        }
+    h3 {
+      background-color: $bgc-main;
+      margin: 0 -10px;
+      text-align: center;
+      padding: 30px;
+      font-size: 2rem;
+      line-height: 2rem;
+      color: $font-bgc-main;
+      mix-blend-mode: luminosity;
+      font-weight: bolder;
+      font-family: fangsong;
+      font-style: italic;
+      letter-spacing: 0.3rem;
     }
 
-    .features {
-        grid-column: 1/4;
-        margin: 0px -10px;
-        div {
-            padding: 0 10px;
+    p {
+      background-color: $add-color2;
+      padding: 20px 10px;
+      margin: 0 -10px;
+      text-align: justify;
+      font-weight: 900;
+      @include font-size(1.2rem);
 
-            h4 {
-                @include font-size(1.4rem);
-                background-color: $font-bgc-main;
-                margin: 0 -10px;
-                padding: 15px;
-                text-align: center;
-                em {
-                    font-style: normal;
-                    text-transform: uppercase;
-                    color: $bgc-main;
-                }
-            }
-
-            p {
-                @include font-size(1.2rem);
-                text-align: justify;
-                margin: 0 -10px;
-                background-image: linear-gradient(180deg, $font-bgc-main, transparent);
-                padding: 10px;
-            }
-        }
+      span {
+        background-image: linear-gradient(
+          45deg,
+          $bgc-main,
+          $font-bgc-main,
+          $bgc-main
+        );
+        background-clip: text;
+        color: transparent;
+      }
     }
+
+    .skills-group {
+      display: flex;
+      margin: 0 -10px;
+      padding: 20px;
+      background: linear-gradient(
+        270deg,
+        $font-bgc-main 25%,
+        $bgc-main,
+        $add-color2 75%
+      );
+      .skills {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 33%;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+    }
+  }
+
+  .features {
+    grid-column: 1/4;
+    margin: 0px -10px;
+    div {
+      padding: 0 10px;
+
+      h4 {
+        @include font-size(1.4rem);
+        background-color: $font-bgc-main;
+        margin: 0 -10px;
+        padding: 15px;
+        text-align: center;
+        em {
+          font-style: normal;
+          text-transform: uppercase;
+          color: $bgc-main;
+        }
+      }
+
+      p {
+        @include font-size(1.2rem);
+        text-align: justify;
+        margin: 0 -10px;
+        background-image: linear-gradient(180deg, $font-bgc-main, transparent);
+        padding: 10px;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 650px) {
-    .about {
-        .desc {
-            h3 {
-            }
+  .about {
+    .desc {
+      p {
+        @include font-size(1.4rem);
+        text-align: center;
+      }
 
-            p {
-                @include font-size(1.4rem);
-                text-align: center;
-                span {
-                }
-            }
+      .skills-group {
+        height: 300px;
+        padding: 0 20px;
+        flex-direction: column;
+        background: linear-gradient(
+          0deg,
+          $font-bgc-main 33%,
+          $bgc-main,
+          $add-color2 66%
+        );
 
-            .skills-group {
-                height: 300px;
-                padding: 0 20px;
-                flex-direction: column;
-                background: linear-gradient(0deg, $font-bgc-main 33%, $bgc-main, $add-color2 66%);
-
-                .skills {
-                    flex-direction: row;
-                }
-            }
+        .skills {
+          flex-direction: row;
         }
-
-        .features {
-            div {
-                h4 {
-                }
-
-                p {
-                }
-            }
-        }
+      }
     }
+  }
 }
 
 @media screen and (min-width: 1000px) {
-    .about {
-        .desc {
-            h3 {
-            }
-
-            p {
-                span {
-                }
-            }
-
-            .skills-group {
-                .skills {
-                }
-            }
+  .about {
+    .features {
+      display: flex;
+      div {
+        flex-basis: calc(1 / 3 * 100%);
+        h4 {
+          @include font-size(1.8rem);
         }
 
-        .features {
-            display: flex;
-            div {
-                flex-basis: calc(1/3 * 100%);
-                h4 {
-                    @include font-size(1.8rem);
-                }
-
-                p {
-                    @include font-size(1.4rem);
-                }
-            }
+        p {
+          @include font-size(1.4rem);
         }
+      }
     }
+  }
 }

@@ -1,18 +1,18 @@
-@import '../style/style';
+@import "../style/style";
 
-.language{
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
-    
-    a {
-        position: relative;
-        z-index: 10;
-        display: inline-block;
-        width:40px;
-    }
+.language {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
 
-    .active{
-        filter:sepia(1);
-    }
+  a {
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    width: 40px;
+  }
+
+  .active {
+    filter: sepia(1);
+  }
 }

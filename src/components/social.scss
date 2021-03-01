@@ -1,17 +1,16 @@
-@import '../style/style.scss';
+@import "../style/style.scss";
 
+.social-link {
+  a {
+    display: inline-block;
 
-.social-link{
-    a{
-        display: inline-block;
-        
-        span{
-            display: inline-block;
-            text-indent:-9999px
-        }
+    span {
+      display: inline-block;
+      text-indent: -9999px;
     }
+  }
 
-    svg{
-        @include font-size(2rem);
-    }
+  svg {
+    @include font-size(2rem);
+  }
 }

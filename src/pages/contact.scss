@@ -1,54 +1,59 @@
 @import "../style/style.scss";
 .contact {
-    h1 {
-        margin: 0 -10px;
-        padding: 10px;
-        text-align: center;
-        @include font-size(2rem);
-        background-image: linear-gradient(90deg, $add-color2, $bgc-main, $add-color2);
-        font-weight: bold;
-        color: $font-bgc-main;
-        position: relative;
+  h1 {
+    margin: 0 -10px;
+    padding: 10px;
+    text-align: center;
+    @include font-size(2rem);
+    background-image: linear-gradient(
+      90deg,
+      $add-color2,
+      $bgc-main,
+      $add-color2
+    );
+    font-weight: bold;
+    color: $font-bgc-main;
+    position: relative;
+  }
+
+  iframe {
+    height: 770px;
+    outline: none;
+    border: 0;
+  }
+
+  .social {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    text-align: center;
+    background-color: $add-color2;
+    margin: 20px -10px;
+    justify-content: space-evenly;
+
+    .mail {
+      color: $font-bgc-main;
+      text-transform: uppercase;
+      font-weight: bold;
     }
 
-    iframe {
-        height: 770px;
-        outline: none;
-        border: 0;
+    .social-link {
+      display: flex;
+      justify-content: space-evenly;
     }
-
-    .social {
-        display: flex;
-        flex-direction: column;
-        height: 200px;
-        text-align: center;
-        background-color: $add-color2;
-        margin: 20px -10px;
-        justify-content: space-evenly;
-
-        .mail {
-            color: $font-bgc-main;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        .social-link {
-            display: flex;
-            justify-content: space-evenly;
-        }
-    }
+  }
 }
 
 @media screen and (min-width: 600px) {
-    .contact {
-        .social {
-            @include font-size(1.5rem);
+  .contact {
+    .social {
+      @include font-size(1.5rem);
 
-            .social-link {
-                svg {
-                    @include font-size(3rem);
-                }
-            }
+      .social-link {
+        svg {
+          @include font-size(3rem);
         }
+      }
     }
+  }
 }
