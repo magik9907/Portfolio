@@ -2,7 +2,7 @@ import React from "react"
 import "./main.scss"
 import { useLanguageContext } from "../hooks/useLanguageContext"
 import json from "../data/main.json"
-import Skills from "../components/skills"
+import Skills from "./skills"
 import { Link } from "gatsby"
 
 type propsType = {

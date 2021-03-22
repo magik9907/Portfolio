@@ -3,21 +3,22 @@ module.exports = {
     title: `Łukasz Milewski - portfolio`,
     description: `Łukasz Milewski - developer of JavaScript and ReactJS.`,
     author: `Łukasz Milewski`,
-    keywords: 'Łukasz Milewski, front-end developer, JavaScript Developer, ReactJS Developer',
+    keywords:
+      "Łukasz Milewski, front-end developer, JavaScript Developer, ReactJS Developer",
     siteUrl: `https://magik9907.github.io`,
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: 'https://magik9907.github.io',
-        sitemap: 'https://magik9907.github.io/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }]
-      }
+        host: "https://magik9907.github.io",
+        sitemap: "https://magik9907.github.io/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
     },
     `gatsby-plugin-sitemap`,
     `gatsby-transformer-sharp`,
-    'gatsby-image',
+    "gatsby-image",
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -25,9 +26,9 @@ module.exports = {
         name: `Łukasz Milewski - portfolio`,
         short_name: `ŁukaszMilewski`,
         start_url: `/`,
-        lang: 'en',
+        lang: "en",
         background_color: `#22A7F0`,
-        description: 'Łukasz Milewski - developer of JavaScript and ReactJS',
+        description: "Łukasz Milewski - developer of JavaScript and ReactJS",
         theme_color: `#22A7F0`,
         display: `standalone`,
         include_favicon: false,
@@ -40,19 +41,19 @@ module.exports = {
             description: `Łukasz Milewski developer tworzący w JavaScript-cie i ReactJS.`,
           },
         ],
-        icon: 'src/icons/favicon-32x32.png',
+        icon: "src/icons/favicon-32x32.png",
         icons: [
           {
-            "src": "/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "any maskable",
+            src: "/android-chrome-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
+            purpose: "any maskable",
           },
           {
-            "src": "/android-chrome-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-          }
+            src: "/android-chrome-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
+          },
         ],
       },
     },
@@ -70,11 +71,11 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    'gatsby-plugin-sass',
+    "gatsby-plugin-sass",
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-    'gatsby-plugin-fontawesome-css',
+    "gatsby-plugin-fontawesome-css",
     {
       resolve: `gatsby-plugin-gtag`,
       options: {

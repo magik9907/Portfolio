@@ -56,6 +56,26 @@
       }
     },
     {
+      "title": "SportApp",
+      "class": "sportapp",
+      "skills": [ "css", "html", "reactjs"],
+      "imgPath": "../images/sportapp.jpg",
+      "link": "/sport-app/",
+      "git": "https://github.com/magik9907/sport-app",
+      "pl": {
+        "assume": [
+          "Pobieranie danych z serwera zewnętrznego za pomocą API i jego zarządzanie"
+        ],
+        "projectDesc": "Projekt zrealizowany samodzielnie który miał na celu zarządzanie danymi pobranym z zewnętrznych źródeł."
+      },
+      "en": {
+        "assume": [
+          "Downloading data from an external server using API and its management"
+        ],
+        "projectDesc": "A project carried out independently, which was aimed at managing data collected from external sources."
+      }
+    },
+    {
       "title": "The Meal Recipe",
       "class": "themealrecipe",
       "skills": ["js", "scss", "html"],
