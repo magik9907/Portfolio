@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://magik9907.github.io/sitemap.xml
+Host: https://magik9907.github.io
