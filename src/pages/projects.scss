@@ -71,6 +71,7 @@
         max-height: 0px;
         transition: max-height 1s;
         content-visibility: auto;
+        overflow: hidden;
       }
 
       &.open {
@@ -96,6 +97,8 @@
     }
   }
 }
+
+
 
 @media screen and (min-width: 600px) {
   .projects {

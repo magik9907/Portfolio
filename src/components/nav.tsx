@@ -29,14 +29,15 @@ const Nav = (prop: propTypes) => {
 
   if (type == "drag") {
     const onDrop = event => {
+      console.log(event)
       event.preventDefault()
-      if (event.target.classList.contains("dropzone")) {
-        event.target.style = ""
+    if (event.currentTarget.classList.contains("dropzone")) {
+      event.currentTarget.style = ""
         if (currSite != null && currSite.classList.contains("drag")) {
           currSite.classList.remove("drag")
           currSite.draggable = false
         }
-        currSite = event.target
+      currSite = event.currentTarget
         currSite.draggable = true
         currSite.classList.add("drag")
         title = currSite.innerText.toLowerCase()
@@ -45,7 +46,6 @@ const Nav = (prop: propTypes) => {
         )
         navigate(currSite.children[0].pathname)
       }
-      event.dataTransfer.clearData()
     }
 
     const onDragOver = event => {
@@ -59,14 +59,14 @@ const Nav = (prop: propTypes) => {
     const onDragEnd = event => {}
 
     const onDragEnter = event => {
-      if (event.target.classList.contains("dropzone")) {
-        event.target.style = "background-color:#a0a0a077;"
+    if (event.currentTarget.classList.contains("dropzone")) {
+      event.currentTarget.style = "background-color:#a0a0a077;"
       }
     }
 
     const onDragLeave = event => {
-      if (event.target.classList.contains("dropzone")) {
-        event.target.style = ""
+    if (event.currentTarget.classList.contains("dropzone")) {
+      event.currentTarget.style = ""
       }
     }
 
